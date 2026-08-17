@@ -181,6 +181,10 @@
   .craft-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--terracotta);border:1px solid rgba(193,99,59,0.4);padding:3px 8px;border-radius:20px;}
   .note{font-size:12px;color:var(--text-faint);font-style:italic;margin-top:10px;}
 
+  .ws-card.tbc{border-style:dashed;border-color:var(--line-strong);background:transparent;}
+  .ws-card.tbc .ws-title h3{color:var(--text-faint);}
+  .ws-card.tbc .tbc-body{color:var(--text-faint);font-size:13.5px;padding:6px 0 2px;}
+
   /* ---- craft candidates ---- */
   .chiplist{display:flex;flex-wrap:wrap;gap:8px;}
   .chip{border:1px solid var(--line-strong);border-radius:20px;padding:7px 14px;font-size:13px;color:var(--text-dim);background:var(--bg-panel);}
@@ -190,6 +194,53 @@
   .tool-card h4{font-size:15.5px;margin-bottom:8px;}
   .tool-card .use{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--moss);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:block;}
   .tool-card p{color:var(--text-dim);font-size:13.5px;margin:0;}
+
+  /* ---- patterns page ---- */
+  .pattern-card{border:1px solid var(--line);border-radius:8px;background:var(--bg-panel);padding:26px 28px;margin-bottom:18px;}
+  .pattern-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;flex-wrap:wrap;}
+  .pattern-num{font-family:'IBM Plex Mono',monospace;color:var(--amber);font-size:12px;border:1px solid var(--amber-dim);padding:3px 9px;border-radius:20px;flex:none;}
+  .pattern-head h3{font-size:19px;}
+  .pattern-block{margin-bottom:14px;}
+  .pattern-block:last-child{margin-bottom:0;}
+  .pattern-block h5{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-faint);margin:0 0 7px;}
+  .pattern-block p{color:var(--text-dim);font-size:14px;margin:0;line-height:1.6;}
+  .pattern-block p em{color:var(--text);font-style:italic;}
+  .pattern-block.open{background:rgba(226,166,59,0.06);border:1px solid var(--amber-dim);border-radius:6px;padding:14px 16px;}
+  .pattern-block.open h5{color:var(--amber);}
+  .shift-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:6px;}
+  @media(max-width:800px){.shift-cols{grid-template-columns:1fr;}}
+  .shift-block h5{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em;margin:0 0 10px;}
+  .shift-block.up h5{color:var(--moss);}
+  .shift-block.down h5{color:var(--terracotta);}
+  .shift-item{border-bottom:1px solid var(--line);padding:10px 0;}
+  .shift-item:last-child{border-bottom:none;}
+  .shift-item .si-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .shift-item .si-top strong{font-size:13.5px;color:var(--text);}
+  .shift-item .si-stat{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);white-space:nowrap;}
+  .shift-item p{margin:5px 0 0;color:var(--text-dim);font-size:12.5px;}
+
+  /* ---- see-also cross-link ---- */
+  .see-also{display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);cursor:pointer;border-bottom:1px dashed var(--amber-dim);padding-bottom:1px;}
+  .see-also:hover{color:var(--text);border-bottom-color:var(--text);}
+  .see-also::before{content:"↳";}
+
+  /* ---- full agenda (overview) ---- */
+  .full-agenda{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:900px){.full-agenda{grid-template-columns:1fr 1fr;}}
+  @media(max-width:640px){.full-agenda{grid-template-columns:1fr;}}
+  .agenda-day{border:1px solid var(--line);border-radius:8px;background:var(--bg-panel);overflow:hidden;display:flex;flex-direction:column;}
+  .agenda-day.highlight{border-color:var(--amber-dim);}
+  .agenda-day-head{padding:16px 18px 14px;border-bottom:1px solid var(--line);}
+  .agenda-day-head .ad-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-faint);margin-bottom:4px;}
+  .agenda-day.highlight .ad-label{color:var(--amber);}
+  .agenda-day-head h4{font-size:16px;}
+  .agenda-rows{padding:6px 0;flex:1;}
+  .agenda-row{display:flex;gap:12px;padding:9px 18px;border-bottom:1px solid var(--line);align-items:baseline;}
+  .agenda-row:last-child{border-bottom:none;}
+  .agenda-time{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);flex:none;width:74px;}
+  .agenda-activity{font-size:12.5px;color:var(--text-dim);line-height:1.4;}
+  .agenda-activity strong{color:var(--text);font-weight:500;}
+  .agenda-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--moss);border:1px solid rgba(131,160,119,0.35);border-radius:20px;padding:1px 6px;margin-left:5px;vertical-align:1px;}
 
   hr.rule{border:none;border-top:1px solid var(--line);margin:44px 0;}
 
@@ -298,6 +349,7 @@
     <nav id="nav">
       <button data-page="overview" class="active">Overview</button>
       <button data-page="preread">Pre-Read</button>
+      <button data-page="patterns">Patterns</button>
       <button data-page="monday">Monday</button>
       <button data-page="tuesday">Tuesday</button>
       <button data-page="wednesday">Wednesday</button>
@@ -351,6 +403,37 @@
     </div>
   </section>
 
+  <hr class="rule">
+
+  <section>
+    <h2>Purpose, objectives, outcomes &amp; outputs</h2>
+    <p class="section-sub">Stated explicitly, so it's easier to see how each session's questions connect back to why we're gathering — and what "done well" actually looks like by Wednesday afternoon.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <span class="num">Purpose — why we're gathering</span>
+        <h3>Build shared strategy and craft, together</h3>
+        <p>To make sense of the changing landscape together, build a shared picture of what we're betting on for the next 1–2 years, strengthen the team's craft, and reconnect with the energy of building something together — before the next season of work begins.</p>
+      </div>
+      <div class="card">
+        <span class="num">Objectives — together we will</span>
+        <h3>Four things, in order</h3>
+        <p>Dive into nine live pieces of work to build shared understanding of the strategy that's emerging from them. Explore the future landscape and what it asks of DM. Name and build craft in the three areas that matter most right now. Opt in, individually, to what leadership requires of each of us next.</p>
+      </div>
+      <div class="card">
+        <span class="num">Outcomes — in order to</span>
+        <h3>What changes because of this week</h3>
+        <p>Everyone can represent DM's collective strategy and talent make-up externally. Pathway builders feel more confident and better supported in their craft. Cross-team coordination on shared partners gets stronger. DM Stewards have a clearer sense of how to support Mission Pathways and where the org is heading.</p>
+      </div>
+      <div class="card">
+        <span class="num">Outputs — what we leave with</span>
+        <h3>Tangible things, not just conversation</h3>
+        <p>The three named craft areas, each with a working artefact (checklist, protocol, template). A confidence map of who holds which craft, to lean on each other going forward. Personal Leadership Letters, sealed for three months. A shared, named list of DM's key assets — partnerships, capital, reputation — and how we're building them.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
   <section>
     <h2>The venue</h2>
     <p class="section-sub">A Wiltshire manor house — grand rooms for plenaries, quiet corners for the deep dives, and a proper library for whenever the day needs to slow down.</p>
@@ -383,17 +466,70 @@
     <p class="section-sub">Each day builds on the last: from where we are, to where the mission is heading, to the work itself, to what it asks of us.</p>
     <div class="daystrip">
       <div class="day-block"><div class="day-label">Sunday</div><h4>Arrive &amp; decompress</h4><p>Land, connect, get ready for an early start Monday.</p></div>
-      <div class="day-block"><div class="day-label">Monday</div><h4>Exploring the future</h4><p>Where we find ourselves now, the future we're building into, and what it asks of DM — explored three ways.</p></div>
-      <div class="day-block current"><div class="day-label">Tuesday</div><h4>Deep dives</h4><p>Work sessions on eight live pieces of work, converging on three areas of craft to go deep on.</p></div>
+      <div class="day-block current"><div class="day-label">Monday</div><h4>Deep dives</h4><p>Dive straight into nine live pieces of work — getting excited, and surfacing the areas of craft that carry us through the rest of the week.</p></div>
+      <div class="day-block"><div class="day-label">Tuesday</div><h4>Exploring the future</h4><p>Carrying Monday's energy into where we find ourselves now, the future we're building into, and what it asks of DM — explored three ways.</p></div>
       <div class="day-block"><div class="day-label">Wednesday</div><h4>Craft &amp; leadership</h4><p>Building the craft and tooling we need, and opting in to what leadership requires of each of us.</p></div>
     </div>
   </section>
 
+  <hr class="rule">
+
   <section>
-    <div class="callout">
-      <div class="mark">”</div>
-      <p><strong>A note on this page.</strong> The source flow deck names six pieces of work for Tuesday; the working list going into the room has grown to eight — Freehouse, Camden Food Mission, Cornerstone / Many-to-Many, RZ &amp; the bioregioning portfolio, Urban Risk &amp; Sensing, Homes That Don't Cost the Earth, Beyond the Rules, and XCO. The Tuesday page below is designed around that live list of eight, with a track structure so all eight get proper depth in one day without every session running as a full plenary.</p>
+    <h2>The full timetable</h2>
+    <p class="section-sub">Every day, at a glance. Full session detail — tracks, prompts, exercises — lives on each day's own page.</p>
+    <div class="full-agenda">
+      <div class="agenda-day">
+        <div class="agenda-day-head"><div class="ad-label">Sunday</div><h4>Arrival</h4></div>
+        <div class="agenda-rows">
+          <div class="agenda-row"><div class="agenda-time">From 11:00</div><div class="agenda-activity">Arrivals — land, settle in, connect</div></div>
+          <div class="agenda-row"><div class="agenda-time">Evening</div><div class="agenda-activity">Welcome dinner, self-catered</div></div>
+        </div>
+      </div>
+      <div class="agenda-day highlight">
+        <div class="agenda-day-head"><div class="ad-label">Monday · Deep Dives</div><h4>Diving into the work</h4></div>
+        <div class="agenda-rows">
+          <div class="agenda-row"><div class="agenda-time">9:00</div><div class="agenda-activity">Opening plenary</div></div>
+          <div class="agenda-row"><div class="agenda-time">9:15 – 10:00</div><div class="agenda-activity">Lightning Round — all nine, high level</div></div>
+          <div class="agenda-row"><div class="agenda-time">10:15 – 2:20</div><div class="agenda-activity">Deep Dives — 5 rounds<span class="agenda-tag">2 tracks</span></div></div>
+          <div class="agenda-row"><div class="agenda-time">2:35 – 3:00</div><div class="agenda-activity">Harvest</div></div>
+          <div class="agenda-row"><div class="agenda-time">3:00 – 4:15</div><div class="agenda-activity"><strong>Convergence</strong> — naming the three areas of craft</div></div>
+          <div class="agenda-row"><div class="agenda-time">4:15 – 4:30</div><div class="agenda-activity">Closing circle</div></div>
+        </div>
+      </div>
+      <div class="agenda-day">
+        <div class="agenda-day-head"><div class="ad-label">Tuesday · Exploring the Future</div><h4>Zooming out</h4></div>
+        <div class="agenda-rows">
+          <div class="agenda-row"><div class="agenda-time">9:00 – 9:30</div><div class="agenda-activity">Landscape Walk</div></div>
+          <div class="agenda-row"><div class="agenda-time">9:30 – 9:45</div><div class="agenda-activity">Break</div></div>
+          <div class="agenda-row"><div class="agenda-time">9:45 – 10:30</div><div class="agenda-activity">Spectrum Lines</div></div>
+          <div class="agenda-row"><div class="agenda-time">10:30 – 11:30</div><div class="agenda-activity">Fishbowl — leadership</div></div>
+          <div class="agenda-row"><div class="agenda-time">11:30 – 11:45</div><div class="agenda-activity">Bridge to Wednesday</div></div>
+          <div class="agenda-row"><div class="agenda-time">12:00</div><div class="agenda-activity">Lunch</div></div>
+          <div class="agenda-row"><div class="agenda-time">Afternoon</div><div class="agenda-activity">Open — partner coordination, funder intel, 1:1s</div></div>
+        </div>
+      </div>
+      <div class="agenda-day">
+        <div class="agenda-day-head"><div class="ad-label">Wednesday · Craft &amp; Tooling</div><h4>Building the craft</h4></div>
+        <div class="agenda-rows">
+          <div class="agenda-row"><div class="agenda-time">9:00</div><div class="agenda-activity">Opening plenary</div></div>
+          <div class="agenda-row"><div class="agenda-time">9:20 – 10:35</div><div class="agenda-activity">Craft Studios — Round 1<span class="agenda-tag">3 studios</span></div></div>
+          <div class="agenda-row"><div class="agenda-time">10:35</div><div class="agenda-activity">Break</div></div>
+          <div class="agenda-row"><div class="agenda-time">10:50 – 12:05</div><div class="agenda-activity">Craft Studios — Round 2<span class="agenda-tag">3 studios</span></div></div>
+          <div class="agenda-row"><div class="agenda-time">12:05</div><div class="agenda-activity">Lunch</div></div>
+          <div class="agenda-row"><div class="agenda-time">1:00 – 1:45</div><div class="agenda-activity">Craft Swap</div></div>
+          <div class="agenda-row"><div class="agenda-time">1:45 – 2:30</div><div class="agenda-activity">Opting in to leadership</div></div>
+          <div class="agenda-row"><div class="agenda-time">2:30 – 3:00</div><div class="agenda-activity">Closing — harvest &amp; commitments</div></div>
+          <div class="agenda-row"><div class="agenda-time">3:30</div><div class="agenda-activity"><strong>Depart</strong></div></div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Nine pieces of work, running first</h2>
+    <p class="section-sub">We're running the deep dives first, on Monday, so the excitement and insight from the work itself carries into the rest of the week. Freehouse, Camden Food Mission, Cornerstone Indicators, RZ &amp; the bioregioning portfolio, City Missions, Homes That Don't Cost the Earth, Beyond the Rules &amp; Many-to-Many, XCO, and Ladywood: 3º 2.0 &amp; Retrofit Land Trust — plus one open slot (TBC) held for anything confirmed closer to the day. Full detail on the Monday page.</p>
   </section>
 
   <section>
@@ -495,7 +631,7 @@
   <section>
     <h2>Golden threads</h2>
     <p class="section-sub">DM's driving question, held loosely: <em>what does it take for communities and societies to remain able to live, flourish and exercise real agency in a world of increasing systemic instability?</em> DM's mission is to drive and share insight into this question so the wider field can act on it.</p>
-    <p class="note" style="margin-bottom:24px;">Flagged in the source deck: this question is drawn from a lot of data and team insight, but hasn't yet had sufficient scrutiny to be confirmed as <em>the</em> question.</p>
+    <p class="note" style="margin-bottom:24px;">This question is drawn from a lot of data and team insight, but hasn't yet had sufficient scrutiny to be confirmed as <em>the</em> question.</p>
     <div class="grid grid-3">
       <div class="card">
         <h3>Meeting societal risks</h3>
@@ -553,7 +689,7 @@
   <section>
     <div class="callout">
       <div class="mark">?</div>
-      <p><strong>An open metaphor, held lightly.</strong> The pre-read floats "Dm is like an independent R&amp;D laboratory for community and societal resilience — somewhere between a humble CERN and a NASA": like CERN, investigating the underlying rules of social systems; like NASA, turning that understanding into practical capability. Flagged in the source deck as a first idea that hasn't had team scrutiny yet — including the open question of whether it reads as too grandiose.</p>
+      <p><strong>An open metaphor, held lightly.</strong> One way of holding it: Dm as an independent R&amp;D laboratory for community and societal resilience — somewhere between a humble CERN and a NASA: like CERN, investigating the underlying rules of social systems; like NASA, turning that understanding into practical capability. A first idea that hasn't had team scrutiny yet — including the open question of whether it reads as too grandiose.</p>
     </div>
   </section>
 
@@ -563,7 +699,7 @@
     <h2>Stories of our work in practice</h2>
     <div class="callout">
       <div class="mark">✎</div>
-      <p><strong>Marked "this is to come" in the source deck.</strong> The team suggestion behind this section: "telling clearer stories about what we're doing, from the past to now." Bring stories that reveal where the work was most effective, where it wasn't, and what that taught us.</p>
+      <p><strong>Still to come.</strong> A suggestion from the team: telling clearer stories about what we're doing, from the past to now. Bring stories that reveal where the work was most effective, where it wasn't, and what that taught us.</p>
     </div>
   </section>
 
@@ -625,7 +761,9 @@
       </div>
     </div>
     <div class="quote">"A highly respected frontier systems-change lab with strong intellectual influence, admired for ambition and originality, but sometimes criticised for abstraction and unclear pathways to scalable implementation."</div>
-    <div class="quote-src" style="margin-bottom:28px;">— Summary: high credibility, incomplete legibility, under-consolidated proof</div>
+    <div class="quote-src" style="margin-bottom:14px;">— Summary: high credibility, incomplete legibility, under-consolidated proof</div>
+    <span class="see-also" data-goto="patterns">2026 Patterns picks this apart further — see Pattern 3, "funders buy proof now"</span>
+    <div style="margin-bottom:28px;"></div>
 
     <h3 style="font-size:17px;margin-bottom:14px;">Strategy insights from across the team</h3>
     <div class="grid grid-2" style="margin-bottom:24px;">
@@ -686,6 +824,7 @@
       <div class="mark">!</div>
       <p><strong>The throttle.</strong> DM now has the conditions and relationships to raise significant funds, but lacks the strategic readiness to move it with integrity to the commitments that would require. Unlikely to get another tranche after raising £50–100m — the money has to move well enough to catalyse other economies. <em>Our current throttle is more strategy than fundraising.</em></p>
     </div>
+    <span class="see-also" data-goto="patterns" style="margin-top:12px;display:inline-block;">2026 Patterns has more on this — see Pattern 6, "funders under pressure," and Pattern 1, "winning less on open bids"</span>
   </section>
 
   <hr class="rule">
@@ -724,149 +863,283 @@
     <h2>Our landscape</h2>
     <p class="section-sub">DM commits to a landscape for a full six-month cycle as its shared organising frame — up to 20% of activity can fall outside it as probes, and both the activity and the landscape system itself get reviewed between cycles.</p>
     <div class="grid grid-3">
-      <div class="card"><span class="num">What</span><h3>Landscape = Matrix</h3><p>Marked "updated matrix" pending in the source deck — the current organising view of where DM plays.</p></div>
+      <div class="card"><span class="num">What</span><h3>Landscape = Matrix</h3><p>An updated matrix is pending — the current organising view of where DM plays.</p></div>
       <div class="card"><span class="num">How</span><h3>Landscape = craft spiral</h3><p>How the work actually gets done cycle over cycle — also marked pending.</p></div>
       <div class="card"><span class="num">Where &amp; who with</span><h3>Priority locations &amp; partners</h3><p>Still in development — the team is building the CRM of locations and partners behind this view.</p></div>
     </div>
-    <p class="note" style="margin-top:16px;">The source deck flags plainly: "to do this really well we still need a great learning and information flow system around this." Worth naming directly in the room rather than assuming it exists.</p>
+    <p class="note" style="margin-top:16px;">Worth naming directly in the room: to do this really well, we still need a great learning and information flow system around this, rather than assuming it exists.</p>
   </section>
 
   <div class="footer-nav">
     <div class="fn" data-goto="overview">← <span>Overview</span></div>
-    <div class="fn" data-goto="monday">Next → <span>Monday: Exploring the Future</span></div>
+    <div class="fn" data-goto="patterns">Next → <span>2026 Patterns</span></div>
+  </div>
+</div>
+
+<!-- ============ PATTERNS ============ -->
+<div class="page" id="patterns">
+  <div class="eyebrow">Pre-Read, continued · Read before Sunday</div>
+  <h1 style="font-size:36px;margin:14px 0 10px;">Seven Patterns from 2026 Pathway Building</h1>
+  <p class="sub" style="color:var(--text-dim);max-width:740px;margin-bottom:20px;">What we're actually sensing across our own calls, our pathways database and our own docs this year — what it means for us, and the open question each one leaves. Read alongside the main Pre-Read; several of the deep dives on Monday connect straight back to these.</p>
+  <div class="callout" style="margin-bottom:44px;">
+    <div class="mark">”</div>
+    <p><strong>Shape of each pattern:</strong> what we're sensing → what it means for us → the open question. All seven come from our own calls, our own pathways database and our own docs — not external benchmarking.</p>
+  </div>
+
+  <div class="pattern-card">
+    <div class="pattern-head"><span class="pattern-num">01</span><h3>We're winning less on open bids</h3></div>
+    <div class="pattern-block">
+      <h5>What we're sensing</h5>
+      <p>Open calls used to be a huge reliance for us, and our success rate on them has dropped off — partly, we suspect, because anyone can write a convincing application now with AI. Meanwhile most of our successful pathways this year came from relationships already in the field: a follow-on from prior work, an invitation, a partner organisation wanting to do something with us.</p>
+    </div>
+    <div class="pattern-block">
+      <h5>What it means for us</h5>
+      <p>As the pathway building circle, we should be more intentional about whether open calls are really worth the effort for the conversion rate we've had this year. Energy shouldn't go into crafting big calls unless we're uniquely positioned or we've already been invited in.</p>
+    </div>
+    <div class="pattern-block open">
+      <h5>Open question</h5>
+      <p>What's our test for entering an open call? A starting hunch: do we already hold the funder or the consortium lead? Is there a framework or direct-award route to the same buyer instead? Do we have someone who can carry it through to contract, not just to submission?</p>
+    </div>
+  </div>
+
+  <div class="pattern-card">
+    <div class="pattern-head"><span class="pattern-num">02</span><h3>Saying no matters — and so does agreeing what we're saying yes to</h3></div>
+    <div class="pattern-block">
+      <h5>What we're hearing</h5>
+      <p>Some good refusals this year: stepping back from the Laudes consortium, which led to Laudes seeing us as an ecosystem thinking partner rather than a grantee. <em>"I'd much rather not take the money than take a liability."</em> A £250 thank-you to a collaborator rather than opening a consultancy relationship. A hard-won lesson from Helsinki that we can't manufacture co-funding by discounting ourselves. What we don't have is any shared basis for those calls — good individual judgements, made individually.</p>
+    </div>
+    <div class="pattern-block">
+      <h5>What it means for us</h5>
+      <p>The step beyond "say no more often" is agreeing what we actually want from a partner, and how we distribute our capacity across the partners we've got. Without that, every no is a personal call, and every yes competes with every other yes for the same people.</p>
+    </div>
+    <div class="pattern-block open">
+      <h5>Open question</h5>
+      <p>What are we looking for in a partner, and who decides when capacity moves from one to another?</p>
+    </div>
+  </div>
+
+  <div class="pattern-card">
+    <div class="pattern-head"><span class="pattern-num">03</span><h3>Funders buy proof now — and proof is our weakest line</h3></div>
+    <div class="pattern-block">
+      <h5>What we're hearing</h5>
+      <p>Our own assessment, from the pop-up pre-read: intellectual originality very strong, trust among EU, UN, city and philanthropic partners very strong — but independently quantified long-term outcomes moderate–weak, and clarity about what DML actually is weak–moderate. Evidence of practical instruments and adoption is moderate–strong, <em>"but concentrated in a few projects."</em> Partners keep asking the same two questions: <em>"What do you bring to the table?"</em> and <em>"What is the clear value proposition that Dm brings?"</em></p>
+    </div>
+    <div class="pattern-block">
+      <h5>What it means for us</h5>
+      <p>The one to put the most weight on — and it connects directly to Pattern 1. If we're spending less unfunded time writing applications, the obvious place for that time to go is evidencing what we've actually built: a website that clearly shows what we've built and what changed as a result; impact made legible as specific, checkable claims rather than a report; and progress shown as it happens, so the people we want investment from can watch it developing rather than being told about it afterwards.</p>
+    </div>
+    <div class="pattern-block open">
+      <h5>Open question</h5>
+      <p>If we deliberately moved a chunk of the unfunded time currently going into applications into evidencing our work — who holds that, and what would we build first?</p>
+    </div>
+  </div>
+
+  <div class="pattern-card">
+    <div class="pattern-head"><span class="pattern-num">04</span><h3>We're increasingly getting paid to set things up</h3></div>
+    <div class="pattern-block">
+      <h5>What we're hearing</h5>
+      <p>Four pieces of work this year followed the same steps without anyone connecting them: map a field → find the innovations in it → run a structured process with the people in it → help launch a fund or vehicle at the end — Homes, FreeHouse, and XCO among them. One Steward is running a version of it for the JRF Unfurling Fund. And a funder offered to convene UK housing funders on our behalf, so they could converge their own funding streams. In all of these, we're the organiser rather than the deliverer.</p>
+    </div>
+    <div class="pattern-block">
+      <h5>What it means for us</h5>
+      <p>Everything we price, we price in days. A day rate works when we're doing the work — it doesn't fit designing a fund, convening a room of funders, or holding an accelerator, so that work tends to land on our books as unfunded time even when it's the most valuable thing we did.</p>
+    </div>
+    <div class="pattern-block open">
+      <h5>Open question</h5>
+      <p>Is there another way to be paid for setting things up — a stewardship retainer, a convening fee, a share of what gets mobilised? Someone in the room has probably already been offered one of these and turned it into a day rate.</p>
+    </div>
+  </div>
+
+  <div class="pattern-card">
+    <div class="pattern-head"><span class="pattern-num">05</span><h3>Handovers need to get cleaner</h3></div>
+    <div class="pattern-block">
+      <h5>What we're hearing</h5>
+      <p>Three of the projects that went over budget this year share a pattern: seeded the same way, project holder changed more than once, timeline stretched. What was promised to the partner never reached the people delivering it, and the team over-delivered because the relationship mattered.</p>
+    </div>
+    <div class="pattern-block">
+      <h5>What it means for us</h5>
+      <p>Not a skills problem — a short protocol. What was promised, at what price, with what latitude, and who can authorise going over.</p>
+    </div>
+    <div class="pattern-block open">
+      <h5>Open question</h5>
+      <p>Whose job is that, and where does it live?</p>
+    </div>
+  </div>
+
+  <div class="pattern-card">
+    <div class="pattern-head"><span class="pattern-num">06</span><h3>Some of the funders we rely on are under pressure themselves</h3></div>
+    <div class="pattern-block">
+      <h5>What we're hearing</h5>
+      <p>This isn't only about us getting better or worse at fundraising — the organisations we depend on are dealing with their own changed conditions, and want to see co-funding or match-funding to de-risk.</p>
+    </div>
+    <div class="pattern-block">
+      <h5>What it means for us</h5>
+      <p>An irony worth naming: one major funder wants funding diversification <em>from us</em> for exactly the reason we want it from them — everyone is de-risking at the same time. Two things follow. Match funding isn't a bonus any more, it's the entry condition — a proposal that arrives without other money attached is arriving incomplete. And a funder relationship is less durable than it used to be; two years now looks like the honest maximum to plan against.</p>
+    </div>
+    <div class="pattern-block open">
+      <h5>Open question</h5>
+      <p>Not resolved yet.</p>
+    </div>
+  </div>
+
+  <div class="pattern-card">
+    <div class="pattern-head"><span class="pattern-num">07</span><h3>Demand is shifting between areas of work, not just shrinking</h3></div>
+    <div class="pattern-block">
+      <h5>What we're hearing</h5>
+      <p>It's easy to read this year as "there's less money." Looking across the pathways database and the calls, what's actually happening is that money is moving between areas.</p>
+    </div>
+    <div class="shift-cols">
+      <div class="shift-block up">
+        <h5>Getting easier to fund</h5>
+        <div class="shift-item">
+          <div class="si-top"><strong>Housing &amp; built environment</strong><span class="si-stat">4% → 6% → 25%</span></div>
+          <p>"Very easily fundable and gathers the right people much more easily." Multi-year funding secured, plus several local authorities and a six-figure programme start.</p>
+        </div>
+        <div class="shift-item">
+          <div class="si-top"><strong>Risk, resilience &amp; security</strong><span class="si-stat">4% → 4% → 9%</span></div>
+          <p>Fund managers now hiring a "Head of Systemic Risk." A small risk clinic abroad opened conversation with major climate philanthropies. Risk and security named in our own pre-read as a "meta frame" driving investment priorities we hadn't previously envisaged.</p>
+        </div>
+        <div class="shift-item">
+          <div class="si-top"><strong>AI, digital &amp; civic tech</strong><span class="si-stat">5% → 6% → 12%</span></div>
+          <p>A major tech funder at interview stage on a seven-figure ask, plus several smaller digital-agency and indicators partners.</p>
+        </div>
+        <div class="shift-item">
+          <div class="si-top"><strong>Food systems</strong><span class="si-stat">rising</span></div>
+          <p>Camden's early-stage grant with a follow-on in the millions crystallising this autumn. Food and soil read as where the "hot money" is — money to the ground, easy to implement.</p>
+        </div>
+        <div class="shift-item">
+          <div class="si-top"><strong>Oceans &amp; blue economy</strong><span class="si-stat">rising</span></div>
+          <p>"Easier to go from philanthropy to impact with return."</p>
+        </div>
+      </div>
+      <div class="shift-block down">
+        <h5>Getting harder to fund <span style="font-size:10px;color:var(--text-faint);text-transform:none;letter-spacing:0;">(less certain — our pathway database is weak here)</span></h5>
+        <div class="shift-item">
+          <div class="si-top"><strong>Nature-based solutions &amp; green infra finance</strong><span class="si-stat">10 → 4 pathways</span></div>
+          <p>"Even though we can show the numbers, it still doesn't mean that you can get people to invest — there's no regulated market for anything else but carbon."</p>
+        </div>
+        <div class="shift-item">
+          <div class="si-top"><strong>Broad, everything-at-once framings</strong><span class="si-stat">down</span></div>
+          <p>Named directly as the challenge of securing "blanket funding" for an initiative spanning both social and planetary agendas — portfolio-level framing asks funders to hold too much complexity at once.</p>
+        </div>
+        <div class="shift-item">
+          <div class="si-top"><strong>System demonstrators</strong><span class="si-stat">dropped as a frame</span></div>
+          <p>Dropped in our own pre-read "because lack of political economy to fund."</p>
+        </div>
+        <div class="shift-item">
+          <div class="si-top"><strong>Diagnosis &amp; framing work</strong><span class="si-stat">the one to underline</span></div>
+          <p>One partner's concern about a live piece of work was that it had "stayed primarily in the diagnosis and solution space and needs to advance to testing viability." That's the demand shift in a sentence: funders want the thing tested, not the thing named.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pattern-block open" style="margin-top:16px;">
+      <h5>Open question</h5>
+      <p>Where is demand growing that we already have the credibility to move into — and what would we have to stop doing to have the capacity to go there?</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <div class="fn" data-goto="preread">← <span>Pre-Read</span></div>
+    <div class="fn" data-goto="monday">Next → <span>Monday: Deep Dives</span></div>
   </div>
 </div>
 
 <!-- ============ MONDAY ============ -->
 <div class="page" id="monday">
-  <div class="eyebrow">Day 2 of 4</div>
-  <h1 style="font-size:36px;margin:14px 0 10px;">Monday — Exploring the Future</h1>
-  <p class="sub" style="color:var(--text-dim);max-width:700px;margin-bottom:40px;">Exploring the place we find ourselves now, the future we're building into, and what it will require of DM — in three different lenses, before Tuesday narrows into specific pieces of work.</p>
+  <div class="eyebrow">Day 2 of 4 · The main event</div>
+  <h1 style="font-size:36px;margin:14px 0 10px;">Monday — Deep Dives</h1>
+  <p class="sub" style="color:var(--text-dim);max-width:760px;margin-bottom:20px;">Deep dives into nine live pieces of work, run in parallel tracks so each gets a real working session rather than a rushed plenary slot — closing with a convergence exercise that names the three areas of craft to go deep on Wednesday.</p>
 
   <section>
-    <h2>Three lenses on the same question</h2>
-    <p class="section-sub">"What does it take for communities and societies to remain able to live, flourish and exercise real agency in a world of increasing systemic instability?" — held from three angles across the morning.</p>
-    <div class="grid grid-3">
-      <div class="card">
-        <span class="num">Lens 1</span>
-        <h3>Focus of the Pop-Up</h3>
-        <p>Increased relevance to planetary risk and world realities; increased quantum and quality of assets to do the work — relationships, capital, reputation, partnerships; better distribution of asset-raising and holding across the team.</p>
-      </div>
-      <div class="card">
-        <span class="num">Lens 2</span>
-        <h3>Patterns emerging at DM</h3>
-        <p>From mapping a field to incubating and funding new ventures; from partner to co-investor with skin in the game; place-based demonstrations and portfolio-level propositions open the door; a shared incubation model with clearer roles, pricing and coordination.</p>
-      </div>
-      <div class="card">
-        <span class="num">Lens 3</span>
-        <h3>Leaning into leadership</h3>
-        <p>What does our mission need of us, and how do we respond with integrity? Why do we do the work we do — and what are the conditions for humans working beautifully together, playing to their strengths?</p>
-      </div>
+    <div class="callout" style="margin-bottom:44px;">
+      <div class="mark">”</div>
+      <p><strong>Why this comes first.</strong> Diving into the work itself — before the bigger strategic conversation — gets everyone excited and gives Tuesday and Wednesday something real to build on, rather than starting the week in the abstract.</p>
     </div>
   </section>
 
   <section>
-    <h2>Suggested exercises</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="idx">A</div>
-        <div class="body">
-          <h4>Landscape Walk (individual → pairs, 30 min)</h4>
-          <p>Solo walk with three prompts held loosely: What's actually changed in the risk landscape this year? What has DM been pretending not to notice? What would I do differently if I ran this alone? Pair up and trade one insight each — no fixing, just witnessing.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="idx">B</div>
-        <div class="body">
-          <h4>Spectrum Lines on the Patterns (whole group, 45 min)</h4>
-          <p>Physically line up along the room against statements like "We are more incubator than deliverer now," "We have skin in the game where it matters," "Our portfolio is chosen with intention, not accumulated by accident." Interview the two ends before moving to the next statement — surfaces disagreement fast, without a plenary debate.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="idx">C</div>
-        <div class="body">
-          <h4>Fishbowl: What Leadership Is Being Asked of Us (60 min)</h4>
-          <p>4–5 people who've been closest to a Steward transition sit in the centre and talk it through unscripted; everyone else listens, then adds written questions on cards mid-way through. Closes with each fishbowl member naming one thing they're opting into.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="idx">D</div>
-        <div class="body">
-          <h4>Bridge to Tuesday — Personal Portfolio Note (15 min, solo, written)</h4>
-          <p>Before the day ends, everyone writes three sentences: the piece of work I'm most excited about right now, the piece I'm most worried about, and the piece I know least about but want to understand. These notes seed who goes where in Tuesday's deep-dive tracks.</p>
-        </div>
-      </div>
+    <h2>Session design: two tracks, not four</h2>
+    <p class="section-sub">Fewer parallel rooms means more of the team actually spends the day together. Two tracks instead of four, with a quick Lightning Round up front so everyone hears a flavour of all nine pieces of work before choosing where to spend their deeper time — and proper 35-minute dives, not a rushed skim.</p>
+    <div class="callout" style="margin-bottom:28px;">
+      <div class="mark">✎</div>
+      <p><strong>The line-up below is provisional.</strong> Which pieces of work get a slot, and in what order, will be confirmed closer to the event. Treat the pairings as a working placeholder for planning purposes, not a fixed running order.</p>
     </div>
-  </section>
-
-  <div class="footer-nav">
-    <div class="fn" data-goto="preread">← <span>Pre-Read</span></div>
-    <div class="fn" data-goto="tuesday">Next → <span>Tuesday: Deep Dives</span></div>
-  </div>
-</div>
-
-<!-- ============ TUESDAY ============ -->
-<div class="page" id="tuesday">
-  <div class="eyebrow">Day 3 of 4 · The main event</div>
-  <h1 style="font-size:36px;margin:14px 0 10px;">Tuesday — Deep Dives</h1>
-  <p class="sub" style="color:var(--text-dim);max-width:760px;margin-bottom:40px;">Deep dives into eight live pieces of work, run in parallel tracks so each gets a real working session rather than a rushed plenary slot — closing with a convergence exercise that names the three areas of craft to go deep on Wednesday.</p>
-
-  <section>
-    <h2>Session design: why tracks, not plenary</h2>
-    <p class="section-sub">Eight deep dives in one day, given in full to the whole group, would mean roughly 40 minutes each after breaks and lunch — enough to present, not enough to dive. Instead, run four parallel tracks across two rounds, so every piece of work gets a genuine 75-minute working session, and every person chooses two of the eight to go deep on rather than skimming all eight.</p>
     <div class="schedgrid">
-      <div class="schedrow head">
+      <div class="schedrow head" style="grid-template-columns:110px 1fr 1fr;">
         <div class="cell">Time</div>
         <div class="cell">Track A</div>
         <div class="cell">Track B</div>
-        <div class="cell">Track C</div>
-        <div class="cell">Track D</div>
       </div>
       <div class="schedrow plenaryrow">
-        <div class="time">9:00</div>
-        <div class="cell plenary">Framing plenary — the deep-dive method &amp; how to choose your two rooms (30 min)</div>
-      </div>
-      <div class="schedrow">
-        <div class="time">9:30 – 10:45</div>
-        <div class="cell fill">Homes That Don't Cost the Earth — Max</div>
-        <div class="cell fill">Camden Food Mission — Adam &amp; Aleks</div>
-        <div class="cell fill">Urban Risk &amp; Sensing — Jorn</div>
-        <div class="cell fill">Beyond the Rules — Annette</div>
+        <div class="time">9:00 – 9:15</div>
+        <div class="cell plenary">Opening plenary — how the day works</div>
       </div>
       <div class="schedrow plenaryrow">
-        <div class="time">10:45</div>
+        <div class="time">9:15 – 10:00</div>
+        <div class="cell plenary">Lightning Round — every piece of work, 3–4 minutes each, high level: what we're going to dive into and why</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">10:00</div>
         <div class="cell plenary">Break (15 min)</div>
       </div>
-      <div class="schedrow">
-        <div class="time">11:00 – 12:15</div>
-        <div class="cell fill">Freehouse — Fang</div>
-        <div class="cell fill">Cornerstone / Many-to-Many — Vlad</div>
-        <div class="cell fill">RZ &amp; the Bioregioning Portfolio — Leon</div>
-        <div class="cell fill">XCO — Robyn</div>
+      <div class="schedrow" style="grid-template-columns:110px 1fr 1fr;">
+        <div class="time">10:15 – 10:50</div>
+        <div class="cell fill">Homes That Don't Cost the Earth</div>
+        <div class="cell fill">Camden Food Mission</div>
+      </div>
+      <div class="schedrow" style="grid-template-columns:110px 1fr 1fr;">
+        <div class="time">10:50 – 11:25</div>
+        <div class="cell fill">City Missions</div>
+        <div class="cell fill">Beyond the Rules &amp; Many-to-Many</div>
       </div>
       <div class="schedrow plenaryrow">
-        <div class="time">12:15</div>
-        <div class="cell plenary">Lunch (75 min)</div>
+        <div class="time">11:25</div>
+        <div class="cell plenary">Break (10 min)</div>
+      </div>
+      <div class="schedrow" style="grid-template-columns:110px 1fr 1fr;">
+        <div class="time">11:35 – 12:10</div>
+        <div class="cell fill">Ladywood: 3º 2.0 &amp; Retrofit Land Trust</div>
+        <div class="cell fill">Cornerstone Indicators</div>
       </div>
       <div class="schedrow plenaryrow">
-        <div class="time">1:30 – 2:15</div>
+        <div class="time">12:10</div>
+        <div class="cell plenary">Lunch (60 min)</div>
+      </div>
+      <div class="schedrow" style="grid-template-columns:110px 1fr 1fr;">
+        <div class="time">1:10 – 1:45</div>
+        <div class="cell fill">RZ &amp; the Bioregioning Portfolio</div>
+        <div class="cell fill">XCO</div>
+      </div>
+      <div class="schedrow" style="grid-template-columns:110px 1fr 1fr;">
+        <div class="time">1:45 – 2:20</div>
+        <div class="cell fill">Freehouse</div>
+        <div class="cell" style="color:var(--text-faint);">TBC</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">2:20</div>
+        <div class="cell plenary">Break (15 min)</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">2:35 – 3:00</div>
         <div class="cell plenary">Harvest — each track reports one pattern and one open question to the whole group (not a full readout of every session)</div>
       </div>
       <div class="schedrow plenaryrow">
-        <div class="time">2:30 – 4:00</div>
+        <div class="time">3:00 – 4:15</div>
         <div class="cell plenary">Convergence — Naming the Three Areas of Craft (see below)</div>
       </div>
       <div class="schedrow plenaryrow">
-        <div class="time">4:00 – 4:30</div>
+        <div class="time">4:15 – 4:30</div>
         <div class="cell plenary">Closing circle — one word each for how the day landed</div>
       </div>
     </div>
-    <p class="note">Round 1 groups the place-based, partnership-facing work; Round 2 groups the portfolio, instrument and fund-shaped work. Swap the grouping if it fits people's actual interests better — the point is depth, not this exact pairing.</p>
+    <p class="note">Five rounds of two, back to back, cover all nine pieces of work plus one open (TBC) slot — everyone is in the same two rooms all day, just choosing which of the two to join each round. Swap the pairings if it fits people's actual interests better — the point is depth and shared time, not this exact order.</p>
   </section>
+
+  <hr class="rule">
 
   <section>
     <h2>The deep-dive method</h2>
-    <p class="section-sub">Each 75-minute session runs the same four-part structure drawn from the flow deck's own template for these sessions, plus a fifth step that feeds the afternoon convergence.</p>
+    <p class="section-sub">Each session runs the same four-part structure, plus a fifth step that feeds the afternoon convergence.</p>
     <div class="steps">
       <div class="step">
         <div class="idx">1</div>
@@ -909,13 +1182,13 @@
   <hr class="rule">
 
   <section>
-    <h2>The eight pieces of work</h2>
-    <p class="section-sub">A working frame and tailored prompts for each session. Where the pre-read and flow deck already give real texture (Homes That Don't Cost the Earth, Camden Food Mission), the prompts pull from that directly. Where the material on the table is lighter, the prompts are built from DM's own patterns and are flagged as a starting point for the lead to sharpen.</p>
+    <h2>The nine pieces of work</h2>
+    <p class="section-sub">A working frame and tailored prompts for each session. Where there's already real texture on the work (Homes That Don't Cost the Earth, Camden Food Mission, Beyond the Rules &amp; Many-to-Many), the prompts pull from that directly. Where the material on the table is lighter, the prompts are built from DM's own patterns and are flagged as a starting point for the lead to sharpen.</p>
 
     <!-- Homes That Don't Cost the Earth -->
     <div class="ws-card">
       <div class="ws-head">
-        <div class="ws-title"><h3>Homes That Don't Cost the Earth</h3><span class="ws-lead">Lead — Max</span></div>
+        <div class="ws-title"><h3>Homes That Don't Cost the Earth</h3></div>
         <span class="ws-round r1">Round 1 · Track A</span>
       </div>
       <p class="ws-frame">A public-private-civic coalition (with Arup, UCL IIPP and Rising Tide, backed by Laudes) building the "Plan B" for housing: meeting need through existing stock — extensions, rightsizing, infill, conversions — rather than build-baby-build. The most developed piece of work on the table, with a live Theory of Change, prototype library and coalition already in motion.</p>
@@ -926,6 +1199,7 @@
             <li>The tension between <strong>creating &amp; convening</strong> vs. building it yourselves — where is the balance sitting today, not in theory?</li>
             <li>The tactic of holding the initiative "in parts and as a whole" — which partners need the whole story, which only need their one part?</li>
             <li>The Laudes co-funding math (~£550k + £450k, target €180k more in discussion) against the ask of £500–750k/year — where's the actual gap right now?</li>
+            <li>2026 Patterns names housing as the sharpest-growing funding area (4% → 6% → 25% of new pathways) — but also flags this specific work as at risk of staying "in the diagnosis and solution space" when funders now want the thing tested, not the thing named. Which is it, honestly, right now?</li>
           </ul>
         </div>
         <div class="ws-block">
@@ -938,13 +1212,14 @@
         </div>
       </div>
       <div class="craft-tags"><span class="craft-tag">structuring complex partnerships</span><span class="craft-tag">strategy &amp; programme design</span></div>
+      <span class="see-also" data-goto="patterns">2026 Patterns — Pattern 4 ("paid to set things up") and Pattern 7 ("diagnosis to viability")</span>
     </div>
 
     <!-- Camden Food Mission -->
     <div class="ws-card">
       <div class="ws-head">
-        <div class="ws-title"><h3>Camden Food Mission</h3><span class="ws-lead">Lead — Adam &amp; Aleks</span></div>
-        <span class="ws-round r1">Round 1 · Track B</span>
+        <div class="ws-title"><h3>Camden Food Mission</h3></div>
+        <span class="ws-round r2">Round 1 · Track B</span>
       </div>
       <p class="ws-frame">A cross-borough food-systems initiative with Camden Council, community food organisations and funders, built to double as a demonstrator for UK-wide food-system transformation. Organised across Supply, Hub and Demand tracks, with borough procurement as the sharpest lever — public bodies can redesign specifications rather than compete on price — and working capital plus fixed-cost cover at the hub layer as where these models actually succeed or fail.</p>
       <div class="ws-cols">
@@ -954,6 +1229,7 @@
             <li>Where the <strong>demand side</strong> (procurement redesign) is actually ahead of or behind the <strong>hub layer's</strong> operating economics — is demand pulling faster than supply/hub can absorb?</li>
             <li>The specific working-capital and fixed-cost gap at the hub — is this a bridging-finance problem, a guaranteed-offtake problem, or both?</li>
             <li>What "demonstration model for UK-wide transformation" actually requires to be true beyond Camden — what has to be documented, not just delivered?</li>
+            <li>2026 Patterns flags food systems as one of the fastest-rising funding areas this year — is Camden positioned to be the credible landing point for that money, or does something specific need to change first?</li>
           </ul>
         </div>
         <div class="ws-block">
@@ -966,13 +1242,14 @@
         </div>
       </div>
       <div class="craft-tags"><span class="craft-tag">political economy — what people get behind</span><span class="craft-tag">creating the conditions for pathway conversion</span></div>
+      <span class="see-also" data-goto="patterns">2026 Patterns — Pattern 7, "demand is shifting between areas of work"</span>
     </div>
 
     <!-- Urban Risk & Sensing -->
     <div class="ws-card">
       <div class="ws-head">
-        <div class="ws-title"><h3>Urban Risk &amp; Sensing</h3><span class="ws-lead">Lead — Jorn</span></div>
-        <span class="ws-round r1">Round 1 · Track C</span>
+        <div class="ws-title"><h3>City Missions</h3></div>
+        <span class="ws-round r1">Round 2 · Track A</span>
       </div>
       <p class="ws-frame">Sits closest to DM's "dark matter" competence — the invisible systems and signals that determine where risk actually concentrates in cities, ahead of it being widely legible. Likely still in the diverging/exploratory phase rather than converged into a single demonstrator.</p>
       <div class="ws-cols">
@@ -996,81 +1273,85 @@
       <div class="craft-tags"><span class="craft-tag">insight into strategy</span><span class="craft-tag">managing relevance &amp; overwhelm</span></div>
     </div>
 
-    <!-- Beyond the Rules -->
+    <!-- Beyond the Rules & Many-to-Many -->
     <div class="ws-card">
       <div class="ws-head">
-        <div class="ws-title"><h3>Beyond the Rules</h3><span class="ws-lead">Lead — Annette</span></div>
-        <span class="ws-round r1">Round 1 · Track D</span>
-      </div>
-      <p class="ws-frame">One of the Labs that secured core funding and has begun to consolidate. Named alongside its Civic Square partnerships — squarely in the territory of "structuring complex partnerships" and long-horizon, power-with relationships rather than service delivery.</p>
-      <div class="ws-cols">
-        <div class="ws-block">
-          <h5>Bring into the room</h5>
-          <ul>
-            <li>What does the Civic Square partnership actually give each side — is it symmetric, or is one side carrying more risk right now?</li>
-            <li>Having secured core funding, what's the next gate — spin-in, spin-out, or steady-state Lab within DM?</li>
-            <li>Where does "power-with" get tested hardest in this partnership — money, credit, or direction-setting?</li>
-          </ul>
-        </div>
-        <div class="ws-block">
-          <h5>Questions for the room</h5>
-          <ul>
-            <li>Who else has held a genuinely power-with partnership through a funding transition without the balance quietly tipping?</li>
-            <li>What's the retrospective version of this — where has a similar partnership not worked, and why?</li>
-          </ul>
-        </div>
-      </div>
-      <div class="craft-tags"><span class="craft-tag">power-with relationships with partners</span><span class="craft-tag">structuring complex partnerships</span></div>
-    </div>
-
-    <!-- Freehouse -->
-    <div class="ws-card">
-      <div class="ws-head">
-        <div class="ws-title"><h3>Freehouse</h3><span class="ws-lead">Lead — Fang</span></div>
-        <span class="ws-round r2">Round 2 · Track A</span>
-      </div>
-      <p class="ws-frame">Not yet detailed in either source deck — treat this session as the one that puts real content on the table for the first time, rather than reviewing something already written down.</p>
-      <div class="ws-cols">
-        <div class="ws-block">
-          <h5>Bring into the room</h5>
-          <ul>
-            <li>A one-paragraph, plain-language statement of what Freehouse actually is and does — written before the session, not improvised in it.</li>
-            <li>Where it sits on DM's funding ladder — pre-seed exploration, Growth Pot, or closer to an XCO-ready position?</li>
-            <li>The single biggest thing that would need to be true in 12 months for this to be called a success.</li>
-          </ul>
-        </div>
-        <div class="ws-block">
-          <h5>Questions for the room</h5>
-          <ul>
-            <li>What does this remind people of elsewhere in the portfolio — and is that a resource to draw on or a trap to avoid repeating?</li>
-            <li>What's the one thing Fang knows they need to do but doesn't yet know how?</li>
-          </ul>
-        </div>
-      </div>
-      <div class="craft-tags"><span class="craft-tag">from problem to pathway to option</span></div>
-    </div>
-
-    <!-- Cornerstone / M2M -->
-    <div class="ws-card">
-      <div class="ws-head">
-        <div class="ws-title"><h3>Cornerstone / Many-to-Many</h3><span class="ws-lead">Lead — Vlad</span></div>
+        <div class="ws-title"><h3>Beyond the Rules &amp; Many-to-Many</h3></div>
         <span class="ws-round r2">Round 2 · Track B</span>
       </div>
-      <p class="ws-frame">Cornerstone Indicators and Many-to-Many contracts were both named as opportunities that opened during Season 3 alongside CircuLaw and Permissioning the City — instrument- and standard-shaped work, closer to tooling than to a single place-based demonstrator.</p>
+      <p class="ws-frame">Beyond the Rules has been operating with a Lab since 2020, primarily with sequential core funding. Beyond the Rules focuses on how we organise and govern relevantly to the systems change we need to make happen. Many-to-Many is one of the strands within this, and now the primary focus of work, focusing specifically on organising and governance for multi-agent, multi-sector collaborations.</p>
+      <p class="ws-frame">Both Beyond the Rules and Many-to-Many have gone through various cycles of Focus and Spread over the years, and have built funding opportunities primarily through field building (which later become pathways opportunities). Its initial framing blog gained lots of interest and traction when Beyond the Rules started, opening us to partnerships, collaborators, funders and speaking platforms. The focus since has been on creating consistently rigorous and high quality work and partnerships (including with edge funders in the field) and continuing to openly share our work, which has led to consistent funding despite very little pathways-building time.</p>
+      <p class="ws-frame">The work is being applied with various demonstrators, partnerships and contexts — how it will evolve in a way that responds to the need of contexts that are strategically ripe is a question we continue to hold.</p>
       <div class="ws-cols">
         <div class="ws-block">
           <h5>Bring into the room</h5>
           <ul>
-            <li>Who actually adopts Cornerstone Indicators or an M2M contract once it exists — and what has to be true for that adoption to happen without DM in the room every time?</li>
-            <li>Is this heading toward the tooling fund lane, or does it need its own coordination-tooling resourcing?</li>
-            <li>What's the smallest real-world use that would prove the instrument works, versus the version that proves it's elegant?</li>
+            <li>What areas of work and governance is Many-to-Many focusing on, and what are the contexts we're applying them in, and what are we building cross-contextually (spread) in this cycle?</li>
+            <li>How could insights from BTR and M2M relate to other parts of DM's portfolio?</li>
+            <li>What have we learnt from stewarding a portfolio of work that goes through cycles of spread and focus at different times, and what it means to build a team for this?</li>
+            <li>What's the next stage for Beyond the Rules — spin-in, spin-out, or steady-state Lab within DM? Could/should it form a meta-frame for a wider Tooling strategy in DM?</li>
           </ul>
         </div>
         <div class="ws-block">
           <h5>Questions for the room</h5>
           <ul>
-            <li>Who else has taken a legal or contractual instrument from DM's drawing board into actual use by a third party — what got it there?</li>
-            <li>What's the political economy question here — what will the parties signing this actually get behind, beyond the elegance of the design?</li>
+            <li>What are the needs in contexts people are operating in around these governance questions? Where are the areas that other contexts are most getting stuck when it comes to complex collaboration governance?</li>
+            <li>What vision would you hold for a next season of BTR — how do you think our next work could be as relevant as possible to world realities and needs you are seeing?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="craft-tags"><span class="craft-tag">power-with relationships with partners</span><span class="craft-tag">structuring complex partnerships</span><span class="craft-tag">spread &amp; focus</span></div>
+    </div>
+
+    <!-- Ladywood: 3º 2.0 & Retrofit Land Trust -->
+    <div class="ws-card">
+      <div class="ws-head">
+        <div class="ws-title"><h3>Ladywood: 3º 2.0 &amp; Retrofit Land Trust</h3></div>
+        <span class="ws-round r1">Round 3 · Track A</span>
+      </div>
+      <p class="ws-frame">Two linked Civic Square partnership briefs, both place-based in Ladywood, both three-year programmes now entering Phase 1. <strong>3º 2.0</strong> revisits and updates the 3º Neighbourhoods work into risk, opportunity and vision mapping for what Ladywood — including the NPS and Retrofit Houses — needs to respond to and could become, with an eye to a replicable 3º methodology for other building sites. <strong>Retrofit Land Trust / Fairhold</strong> is a proposed ownership and tenure model, developed with Open Systems Lab, using long-term stewardship of property (via a Community Land Trust) to fund retrofit across the neighbourhood and let the community govern the outcomes — starting with the Retrofit House itself.</p>
+      <div class="ws-cols">
+        <div class="ws-block">
+          <h5>Bring into the room</h5>
+          <ul>
+            <li>Where the <strong>risk &amp; vision mapping</strong> (3º 2.0) and the <strong>ownership &amp; tenure model</strong> (Retrofit Land Trust) actually depend on each other — does one need the other's Phase 1 output to proceed, or can they run in parallel?</li>
+            <li>The replicability ambition in both briefs — a "3º methodology for building sites" and a land trust model "documented and networked for replication" — what would make Ladywood a genuine template rather than a one-off?</li>
+            <li>Both are DM-Civic Square rate-aligned day-rate budgets (£563/day) against a fairly open Phase 2–3 co-funding ask — where's the real funding gap sitting right now?</li>
+          </ul>
+        </div>
+        <div class="ws-block">
+          <h5>Questions for the room</h5>
+          <ul>
+            <li>Who else has translated a values-led framework (like the six 3º reimaginings) into decisions a design team or council will actually act on?</li>
+            <li>Who's worked on a Community Land Trust or comparable long-term stewardship vehicle — what did the Phase 1 "problem definition" need to contain to survive into a real Phase 2 legal set-up?</li>
+            <li>What's the retrospective version of a neighbourhood-scale demonstrator that didn't make it to replication — what actually stopped it travelling?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="craft-tags"><span class="craft-tag">from problem to pathway to option</span><span class="craft-tag">strategy &amp; programme design</span><span class="craft-tag">political economy — what people get behind</span></div>
+    </div>
+
+    <!-- Cornerstone Indicators -->
+    <div class="ws-card">
+      <div class="ws-head">
+        <div class="ws-title"><h3>Cornerstone Indicators</h3></div>
+        <span class="ws-round r2">Round 3 · Track B</span>
+      </div>
+      <p class="ws-frame">One of the standard- and instrument-shaped opportunities that opened during Season 3, alongside CircuLaw and Permissioning the City — closer to tooling than to a single place-based demonstrator.</p>
+      <div class="ws-cols">
+        <div class="ws-block">
+          <h5>Bring into the room</h5>
+          <ul>
+            <li>Who actually adopts Cornerstone Indicators once they exist — and what has to be true for that adoption to happen without DM in the room every time?</li>
+            <li>Is this heading toward the tooling fund lane, or does it need its own coordination-tooling resourcing?</li>
+            <li>What's the smallest real-world use that would prove the indicators work, versus the version that proves they're elegant?</li>
+          </ul>
+        </div>
+        <div class="ws-block">
+          <h5>Questions for the room</h5>
+          <ul>
+            <li>Who else has taken a standard or instrument from DM's drawing board into actual use by a third party — what got it there?</li>
+            <li>What's the political economy question here — what will the parties using this actually get behind, beyond the elegance of the design?</li>
           </ul>
         </div>
       </div>
@@ -1080,8 +1361,8 @@
     <!-- RZ / Bioregioning -->
     <div class="ws-card">
       <div class="ws-head">
-        <div class="ws-title"><h3>RZ &amp; the Bioregioning Portfolio</h3><span class="ws-lead">Lead — Leon</span></div>
-        <span class="ws-round r2">Round 2 · Track C</span>
+        <div class="ws-title"><h3>RZ &amp; the Bioregioning Portfolio</h3></div>
+        <span class="ws-round r1">Round 4 · Track A</span>
       </div>
       <p class="ws-frame">RZ is DM's own worked example of "spin-in" — an initiative that reached enough maturity to become its own legal entity under the DML Group while still drawing on DM's protocols and backend, and one of the two named examples (alongside XCO) of DM's own capital acting as a catalytic move rather than just funding.</p>
       <div class="ws-cols">
@@ -1107,8 +1388,8 @@
     <!-- XCO -->
     <div class="ws-card">
       <div class="ws-head">
-        <div class="ws-title"><h3>XCO</h3><span class="ws-lead">Lead — Robyn</span></div>
-        <span class="ws-round r2">Round 2 · Track D</span>
+        <div class="ws-title"><h3>XCO</h3></div>
+        <span class="ws-round r2">Round 4 · Track B</span>
       </div>
       <p class="ws-frame">The layer of DM's funding stack where a proven position becomes an actual investable deal — currently the one layer with dedicated resourcing, sitting above Coordination Tooling and the unfunded Precursor layer that DM has always run on borrowed capacity rather than a funded structure of its own.</p>
       <div class="ws-cols">
@@ -1118,17 +1399,57 @@
             <li>What's actually in the XCO pipeline right now, and which pieces of work on today's list are realistically 6–18 months from being XCO-ready?</li>
             <li>Given DM's own capital works best as a staged, escalating commitment — what does that staging look like concretely for the next deal?</li>
             <li>The organisation's "throttle" is named as strategy, not fundraising capacity — where does that show up specifically in how XCO moves deals?</li>
+            <li>XCO is one of 2026 Patterns' own named examples of "getting paid to set things up" (Pattern 4) — is XCO itself priced as the organiser role it actually plays, or still absorbing that as unfunded time?</li>
           </ul>
         </div>
         <div class="ws-block">
           <h5>Questions for the room</h5>
           <ul>
-            <li>Which of today's other seven pieces of work should be actively preparing for an XCO conversation, and what would "ready" look like for each?</li>
+            <li>Which of today's other pieces of work should be actively preparing for an XCO conversation, and what would "ready" look like for each?</li>
             <li>What's the retrospective version of a deal that didn't convert — what actually killed it?</li>
           </ul>
         </div>
       </div>
       <div class="craft-tags"><span class="craft-tag">structuring complex partnerships</span><span class="craft-tag">catalytic capital as staged commitment</span></div>
+      <span class="see-also" data-goto="patterns">2026 Patterns — Pattern 4, "getting paid to set things up"</span>
+    </div>
+
+    <!-- Freehouse -->
+    <div class="ws-card">
+      <div class="ws-head">
+        <div class="ws-title"><h3>Freehouse</h3></div>
+        <span class="ws-round r1">Round 5 · Track A</span>
+      </div>
+      <p class="ws-frame">Not yet fully scoped — treat this session as the one that puts real content on the table for the first time, rather than reviewing something already written down. Already surfaced twice in 2026 Patterns: as one of the year's "map a field → find the innovations → run a structured process → launch a fund" examples (Pattern 4), and among the named funding starts behind housing's rise to 25% of new pathways (Pattern 7).</p>
+      <div class="ws-cols">
+        <div class="ws-block">
+          <h5>Bring into the room</h5>
+          <ul>
+            <li>A one-paragraph, plain-language statement of what Freehouse actually is and does — written before the session, not improvised in it.</li>
+            <li>Where it sits on DM's funding ladder — pre-seed exploration, Growth Pot, or closer to an XCO-ready position?</li>
+            <li>The single biggest thing that would need to be true in 12 months for this to be called a success.</li>
+            <li>If this is genuinely "getting paid to set things up" rather than delivery, is it actually priced that way — or still landing as unfunded day-rate time?</li>
+          </ul>
+        </div>
+        <div class="ws-block">
+          <h5>Questions for the room</h5>
+          <ul>
+            <li>What does this remind people of elsewhere in the portfolio — and is that a resource to draw on or a trap to avoid repeating?</li>
+            <li>What's the one thing the lead knows they need to do but doesn't yet know how?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="craft-tags"><span class="craft-tag">from problem to pathway to option</span></div>
+      <span class="see-also" data-goto="patterns">2026 Patterns — Pattern 4, "getting paid to set things up"</span>
+    </div>
+
+    <!-- TBC 2 -->
+    <div class="ws-card tbc">
+      <div class="ws-head">
+        <div class="ws-title"><h3>TBC</h3></div>
+        <span class="ws-round r2">Round 5 · Track B</span>
+      </div>
+      <p class="tbc-body">Open slot — to be confirmed closer to the day.</p>
     </div>
   </section>
 
@@ -1136,8 +1457,8 @@
 
   <section>
     <h2>Convergence — naming the three areas of craft</h2>
-    <p class="section-sub">The flow deck's own brainstorm already names candidate craft areas. The job this afternoon is not to invent new ones, but to converge the room's actual signal — from the eight deep dives just run — down to the three that matter most to go deep on Wednesday.</p>
-    <div class="chiplist" style="margin-bottom:22px;">
+    <p class="section-sub">There's already a working brainstorm of candidate craft areas, and 2026 Patterns adds a few more worth testing. The job this afternoon is not to invent new ones, but to converge the room's actual signal — from the nine deep dives just run — down to the three that matter most to go deep on Wednesday.</p>
+    <div class="chiplist" style="margin-bottom:10px;">
       <span class="chip">Retrospective on where it really hasn't worked</span>
       <span class="chip">Power-with relationships with partners</span>
       <span class="chip">Structuring complex partnerships</span>
@@ -1148,11 +1469,16 @@
       <span class="chip">Managing relevance &amp; overwhelm</span>
       <span class="chip">Political economy — what people will get behind</span>
       <span class="chip">Insight gifs of each other's strategies</span>
+      <span class="chip" style="border-color:var(--amber-dim);color:var(--amber);">Agreeing what we say yes to &amp; distributing capacity</span>
+      <span class="chip" style="border-color:var(--amber-dim);color:var(--amber);">Evidencing what we've actually built</span>
+      <span class="chip" style="border-color:var(--amber-dim);color:var(--amber);">Getting paid to set things up, not just deliver</span>
+      <span class="chip" style="border-color:var(--amber-dim);color:var(--amber);">Clean handovers &amp; promise-keeping</span>
     </div>
+    <p class="note" style="margin-bottom:22px;">Amber chips are new candidates surfaced in 2026 Patterns — <span class="see-also" data-goto="patterns">see Patterns 2, 3, 4 &amp; 5</span> — not yet tested against this room's actual deep-dive signal.</p>
     <div class="steps">
       <div class="step">
         <div class="idx">1</div>
-        <div class="body"><h4>Cluster the wall (20 min)</h4><p>Bring every craft-signal card from the eight deep-dive rooms and the chip list above together on one wall. In small mixed-track groups, cluster cards that are naming the same underlying craft, even if worded differently.</p></div>
+        <div class="body"><h4>Cluster the wall (20 min)</h4><p>Bring every craft-signal card from the nine deep-dive rooms and the chip list above together on one wall. In small mixed-track groups, cluster cards that are naming the same underlying craft, even if worded differently.</p></div>
       </div>
       <div class="step">
         <div class="idx">2</div>
@@ -1160,63 +1486,297 @@
       </div>
       <div class="step">
         <div class="idx">3</div>
-        <div class="body"><h4>Dot-vote (15 min)</h4><p>Three dots each, weighted by "which craft, if we don't build it, most limits what today's eight pieces of work can become." Not popularity — capability gap.</p></div>
+        <div class="body"><h4>Dot-vote (15 min)</h4><p>Three dots each, weighted by "which craft, if we don't build it, most limits what today's nine pieces of work can become." Not popularity — capability gap.</p></div>
       </div>
       <div class="step">
         <div class="idx">4</div>
         <div class="body"><h4>Stress-test the top three (25 min)</h4><p>For the top three by vote, one person argues against including it ("this is really a symptom of the craft above it, not its own craft") before the room commits. This catches false convergence.</p></div>
       </div>
+      <div class="step">
+        <div class="idx">5</div>
+        <div class="body"><h4>Craft Confidence Map (10 min)</h4><p>Against each of the three named craft areas, everyone marks how confident they feel holding it — not to rank people, but so the room has an honest picture of who feels strong where. Used directly to build Wednesday's studios: a mix of confidence levels in each room, not just whoever's most enthusiastic. Also the starting point for a longer-term answer to "who feels confident in which part of the craft, so we can support each other more across the org."</p></div>
+      </div>
     </div>
   </section>
 
   <div class="footer-nav">
-    <div class="fn" data-goto="monday">← <span>Monday</span></div>
+    <div class="fn" data-goto="patterns">← <span>2026 Patterns</span></div>
+    <div class="fn" data-goto="tuesday">Next → <span>Tuesday: Exploring the Future</span></div>
+  </div>
+</div>
+
+<!-- ============ TUESDAY ============ -->
+<div class="page" id="tuesday">
+  <div class="eyebrow">Day 3 of 4</div>
+  <h1 style="font-size:36px;margin:14px 0 10px;">Tuesday — Exploring the Future</h1>
+  <p class="sub" style="color:var(--text-dim);max-width:700px;margin-bottom:20px;">Exploring the place we find ourselves now, the future we're building into, and what it will require of DM — in three different lenses, carrying forward the energy and insight from Monday's deep dives.</p>
+
+  <section>
+    <div class="callout" style="margin-bottom:44px;">
+      <div class="mark">”</div>
+      <p><strong>Why this comes second.</strong> Monday's deep dives give the room real, specific material to think with. Today takes that material and holds it against the bigger question of where DM is heading — so the future conversation stays grounded rather than abstract.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>The day, at a glance</h2>
+    <div class="schedgrid">
+      <div class="schedrow head" style="grid-template-columns:110px 1fr;">
+        <div class="cell">Time</div>
+        <div class="cell">Session</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">9:00 – 9:30</div>
+        <div class="cell plenary" style="text-align:left;justify-content:flex-start;">Landscape Walk — individual → pairs</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">9:30 – 9:45</div>
+        <div class="cell plenary">Break</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">9:45 – 10:30</div>
+        <div class="cell plenary" style="text-align:left;justify-content:flex-start;">Spectrum Lines on the Patterns — whole group</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">10:30 – 11:30</div>
+        <div class="cell plenary" style="text-align:left;justify-content:flex-start;">Fishbowl — what leadership is being asked of us</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">11:30 – 11:45</div>
+        <div class="cell plenary" style="text-align:left;justify-content:flex-start;">Bridge to Wednesday — Personal Portfolio Note</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">12:00</div>
+        <div class="cell plenary">Lunch</div>
+      </div>
+      <div class="schedrow plenaryrow">
+        <div class="time">Afternoon</div>
+        <div class="cell plenary" style="text-align:left;justify-content:flex-start;">Open — no fixed sessions. Suggested uses: 1:1s, partner coordination for shared relationships, funder &amp; partner tacit-intel exchange, walks, site time.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="callout" style="margin-bottom:0;">
+      <div class="mark">✎</div>
+      <p><strong>Using the open afternoon well.</strong> Two things worth deliberately carving out time for, rather than leaving to chance: where more than one person holds the relationship with the same partner or funder, use this time to align on who's doing what. And if you hold funder-facing relationships, trade what you know about their "vibe" — what motivates them, what they're sensitive about, which framings land — with someone who doesn't yet have that intel.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Three lenses on the same question</h2>
+    <p class="section-sub">"What does it take for communities and societies to remain able to live, flourish and exercise real agency in a world of increasing systemic instability?" — held from three angles across the morning.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="num">Lens 1</span>
+        <h3>Focus of the Pop-Up</h3>
+        <p>Increased relevance to planetary risk and world realities; increased quantum and quality of assets to do the work — relationships, capital, reputation, partnerships; better distribution of asset-raising and holding across the team.</p>
+      </div>
+      <div class="card">
+        <span class="num">Lens 2</span>
+        <h3>Patterns emerging at DM</h3>
+        <p>From mapping a field to incubating and funding new ventures; from partner to co-investor with skin in the game; place-based demonstrations and portfolio-level propositions open the door; a shared incubation model with clearer roles, pricing and coordination.</p>
+      </div>
+      <div class="card">
+        <span class="num">Lens 3</span>
+        <h3>Leaning into leadership</h3>
+        <p>What does our mission need of us, and how do we respond with integrity? Why do we do the work we do — and what are the conditions for humans working beautifully together, playing to their strengths?</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Suggested exercises</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="idx">A</div>
+        <div class="body">
+          <h4>Landscape Walk (individual → pairs, 30 min)</h4>
+          <p>Solo walk with three prompts held loosely: What's actually changed in the risk landscape this year? What has DM been pretending not to notice? What would I do differently if I ran this alone? Pair up and trade one insight each — no fixing, just witnessing.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="idx">B</div>
+        <div class="body">
+          <h4>Spectrum Lines on the Patterns (whole group, 45 min)</h4>
+          <p>Physically line up along the room against statements like "We are more incubator than deliverer now," "We have skin in the game where it matters," "Our portfolio is chosen with intention, not accumulated by accident." Interview the two ends before moving to the next statement — surfaces disagreement fast, without a plenary debate.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="idx">C</div>
+        <div class="body">
+          <h4>Fishbowl: What Leadership Is Being Asked of Us (60 min)</h4>
+          <p>4–5 people who've been closest to a Steward transition sit in the centre and talk it through unscripted; everyone else listens, then adds written questions on cards mid-way through. Closes with each fishbowl member naming one thing they're opting into.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="idx">D</div>
+        <div class="body">
+          <h4>Bridge to Wednesday — Personal Portfolio Note (15 min, solo, written)</h4>
+          <p>Before the day ends, everyone writes three sentences: the piece of work from Monday I'm still thinking about, the craft I most want us to get better at, and one commitment for how I'll show up in Wednesday's craft studios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-nav">
+    <div class="fn" data-goto="monday">← <span>Monday: Deep Dives</span></div>
     <div class="fn" data-goto="wednesday">Next → <span>Wednesday: Craft &amp; Tooling</span></div>
   </div>
 </div>
 
 <!-- ============ WEDNESDAY ============ -->
 <div class="page" id="wednesday">
-  <div class="eyebrow">Day 4 of 4</div>
+  <div class="eyebrow">Day 4 of 4 · The craft day</div>
   <h1 style="font-size:36px;margin:14px 0 10px;">Wednesday — Craft &amp; Tooling</h1>
-  <p class="sub" style="color:var(--text-dim);max-width:700px;margin-bottom:40px;">Revisiting what's actually going to be needed from us, and opting in to leadership — built directly on the three areas of craft named Tuesday afternoon.</p>
+  <p class="sub" style="color:var(--text-dim);max-width:740px;margin-bottom:20px;">By Wednesday, the three areas of craft that actually matter aren't a guess — they've come straight out of Monday's deep dives, tested against nine live pieces of work rather than picked in the abstract. That clarity is what lets this day go deep rather than broad: two full rounds of craft practice, a cross-studio exchange, and space to opt in to what leadership actually asks of us next.</p>
 
   <section>
-    <h2>Morning — craft studios</h2>
-    <p class="section-sub">Three parallel studios, one per craft area named Tuesday. Each studio is a working session, not a lecture — it should leave with something usable, not just a shared vocabulary.</p>
+    <div class="callout" style="margin-bottom:44px;">
+      <div class="mark">✎</div>
+      <p><strong>The three craft areas land live.</strong> Rather than fix them in advance, the studios below are named from Monday afternoon's card sort and dot-vote (see the Monday page). Whatever the room converges on — from candidates like power-with partnerships, political economy, strategy &amp; programme design, managing relevance &amp; overwhelm, or the newer <span class="see-also" data-goto="patterns">2026 Patterns</span> candidates like evidencing our work or getting paid to set things up — gets its own studio here. Update the studio names below once Monday lands.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>The day, at a glance</h2>
+    <p class="section-sub">Two full rounds of craft practice rather than one, plus a deliberate cross-pollination step before the day turns toward leadership.</p>
+    <div class="schedgrid">
+      <div class="schedrow head">
+        <div class="cell">Time</div>
+        <div class="cell">Studio 1</div>
+        <div class="cell">Studio 2</div>
+        <div class="cell">Studio 3</div>
+      </div>
+      <div class="schedrow plenaryrow" style="grid-template-columns:110px 1fr;">
+        <div class="time">9:00</div>
+        <div class="cell plenary">Opening plenary — naming the three studios &amp; how the day works (20 min)</div>
+      </div>
+      <div class="schedrow" style="grid-template-columns:110px 1fr 1fr 1fr;">
+        <div class="time">9:20 – 10:35</div>
+        <div class="cell fill">Craft Studio — Round 1</div>
+        <div class="cell fill">Craft Studio — Round 1</div>
+        <div class="cell fill">Craft Studio — Round 1</div>
+      </div>
+      <div class="schedrow plenaryrow" style="grid-template-columns:110px 1fr;">
+        <div class="time">10:35</div>
+        <div class="cell plenary">Break (15 min)</div>
+      </div>
+      <div class="schedrow" style="grid-template-columns:110px 1fr 1fr 1fr;">
+        <div class="time">10:50 – 12:05</div>
+        <div class="cell fill">Craft Studio — Round 2</div>
+        <div class="cell fill">Craft Studio — Round 2</div>
+        <div class="cell fill">Craft Studio — Round 2</div>
+      </div>
+      <div class="schedrow plenaryrow" style="grid-template-columns:110px 1fr;">
+        <div class="time">12:05</div>
+        <div class="cell plenary">Lunch (55 min)</div>
+      </div>
+      <div class="schedrow plenaryrow" style="grid-template-columns:110px 1fr;">
+        <div class="time">1:00 – 1:45</div>
+        <div class="cell plenary">Craft Swap — cross-studio exchange (see below)</div>
+      </div>
+      <div class="schedrow plenaryrow" style="grid-template-columns:110px 1fr;">
+        <div class="time">1:45 – 2:30</div>
+        <div class="cell plenary">Opting in to leadership</div>
+      </div>
+      <div class="schedrow plenaryrow" style="grid-template-columns:110px 1fr;">
+        <div class="time">2:30 – 3:00</div>
+        <div class="cell plenary">Closing — harvest &amp; commitments</div>
+      </div>
+      <div class="schedrow plenaryrow" style="grid-template-columns:110px 1fr;">
+        <div class="time">3:30</div>
+        <div class="cell plenary">Depart</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Craft Studios — Round 1</h2>
+    <p class="section-sub">One studio per craft area named on Monday. Each studio is a working session, not a lecture — it should leave with something usable, not just a shared vocabulary.</p>
     <div class="steps">
       <div class="step">
         <div class="idx">1</div>
         <div class="body">
-          <h4>Ground the craft in the team's own insight (20 min)</h4>
-          <p>Each studio opens with whichever of the team's own strategy insights bears most directly on their craft — for example: requisite variety and the tension with focus; resonance ("we attract what we are"); the builder/driver/enabler split; spread &amp; focus as recurring phases; spin-in/spin-out as an explicit trajectory.</p>
+          <h4>Ground the craft in the team's own insight (15 min)</h4>
+          <p>Each studio opens with whichever of the team's own strategy insights bears most directly on their craft — requisite variety and the tension with focus; resonance ("we attract what we are"); the builder/driver/enabler split; spread &amp; focus as recurring phases; spin-in/spin-out as an explicit trajectory; the reminder that the posture you build a relationship with is the posture that embeds.</p>
         </div>
       </div>
       <div class="step">
         <div class="idx">2</div>
         <div class="body">
-          <h4>Craft Clinic (60–75 min)</h4>
-          <p>Action-learning format. Each person brings one live decision from their own piece of work that this craft bears on. In turn: 5 min to present the decision, 5 min of clarifying questions only (no advice), 10 min of the group offering what they'd try, 2 min for the presenter to say what landed. Rotate through as many people as time allows rather than going deep on only one or two.</p>
+          <h4>Craft Clinic (50 min)</h4>
+          <p>Action-learning format. Each person brings one live decision — ideally one that surfaced during Monday's deep dives — that this craft bears on. In turn: 5 min to present the decision, 5 min of clarifying questions only (no advice), 10 min of the group offering what they'd try, 2 min for the presenter to say what landed. Rotate through as many people as time allows.</p>
         </div>
       </div>
       <div class="step">
         <div class="idx">3</div>
         <div class="body">
-          <h4>Name one artefact (15 min)</h4>
-          <p>Before lunch, each studio names one concrete thing that should exist because of this craft studio — a checklist, a term sheet clause, a one-page retrospective template, a partnership MOU pattern. Someone owns writing it up within two weeks.</p>
+          <h4>First pass at an artefact (10 min)</h4>
+          <p>Before the break, each studio drafts — doesn't finish — one concrete thing this craft needs to exist: a checklist, a term sheet clause, a one-page retrospective template, a partnership MOU pattern. Round 2 sharpens it.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Midday — opting in to leadership</h2>
-    <p class="section-sub">What does our mission need of us, and how do we respond to it with integrity? This is the session where the pop-up turns from analysis toward personal commitment.</p>
+    <h2>Craft Studios — Round 2</h2>
+    <p class="section-sub">Same studio, same craft, a second run at it — now with a working draft to sharpen rather than a blank page.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="idx">4</div>
+        <div class="body">
+          <h4>Craft Clinic, round two (45 min)</h4>
+          <p>Run again with whoever didn't get a turn in Round 1, or return to the hardest case from Round 1 with fresh eyes. If the studio's craft is genuinely contested (e.g. does a Many-to-Many contract fit a power-with posture, or pull against it?), spend this round on that tension directly rather than another round of individual cases.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="idx">5</div>
+        <div class="body">
+          <h4>Finish the artefact (20 min)</h4>
+          <p>Take the Round 1 draft to something an owner could actually use next week. Name who owns finishing it properly within two weeks, and who it's for.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="idx">6</div>
+        <div class="body">
+          <h4>Prep the swap (5 min)</h4>
+          <p>Choose one person to stay and host the studio's artefact during the Craft Swap; everyone else visits another studio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Craft Swap — cross-studio exchange</h2>
+    <p class="section-sub">The step that stops each craft studio becoming its own silo. A deliberate structure for cross-pollination, not just a shared lunch.</p>
+    <div class="grid grid-3">
+      <div class="card"><span class="num">Move</span><h3>One host stays</h3><p>Each studio leaves one person behind with the artefact and a two-minute pitch. Everyone else moves to a different studio.</p></div>
+      <div class="card"><span class="num">Ask</span><h3>Stress-test, not admire</h3><p>Visitors' job is to ask "where would this break on my piece of work?" — not to compliment the artefact.</p></div>
+      <div class="card"><span class="num">Return</span><h3>Bring one edit home</h3><p>Everyone returns to their own studio with one concrete edit gathered from outside it, and folds it in before the artefact is called done.</p></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Opting in to leadership</h2>
+    <p class="section-sub">What does our mission need of us, and how do we respond to it with integrity? This is the session where the pop-up turns from craft toward personal commitment.</p>
     <div class="grid grid-2">
       <div class="card">
         <span class="num">Exercise</span>
         <h3>Skin in the Game, revisited</h3>
-        <p>Return to Monday's spectrum line on "we have skin in the game where it matters." Stand on it again, individually this time, for your own piece of work specifically — not DM in the abstract. Notice what moved and what didn't.</p>
+        <p>Return to Tuesday's spectrum line on "we have skin in the game where it matters." Stand on it again, individually this time, for your own piece of work specifically — not DM in the abstract. Notice what moved and what didn't.</p>
       </div>
       <div class="card">
         <span class="num">Exercise</span>
@@ -1226,16 +1786,18 @@
     </div>
   </section>
 
+  <hr class="rule">
+
   <section>
     <h2>Closing — harvest &amp; commitments</h2>
     <div class="steps">
       <div class="step">
         <div class="idx">1</div>
-        <div class="body"><h4>Craft artefact readout (20 min)</h4><p>Each studio reads out its one named artefact and its owner — into the room, into the record, not just onto a wall.</p></div>
+        <div class="body"><h4>Craft artefact readout (20 min)</h4><p>Each studio reads out its finished artefact and its owner — into the room, into the record, not just onto a wall.</p></div>
       </div>
       <div class="step">
         <div class="idx">2</div>
-        <div class="body"><h4>Closing circle (20 min)</h4><p>One sentence each: what I'm taking back to my piece of work from these four days. No cross-talk, no response — just witnessed.</p></div>
+        <div class="body"><h4>Closing circle (10 min)</h4><p>One sentence each: what I'm taking back to my piece of work from these four days. No cross-talk, no response — just witnessed.</p></div>
       </div>
     </div>
     <p class="note" style="margin-top:16px;">Depart from 3:30pm.</p>
@@ -1251,18 +1813,29 @@
 <div class="page" id="toolkit">
   <div class="eyebrow">Reference</div>
   <h1 style="font-size:36px;margin:14px 0 10px;">Facilitation Toolkit</h1>
-  <p class="sub" style="color:var(--text-dim);max-width:700px;margin-bottom:40px;">Quick reference for every exercise named across the four days, so whoever's holding the room doesn't have to hunt back through the agenda.</p>
+  <p class="sub" style="color:var(--text-dim);max-width:700px;margin-bottom:20px;">Quick reference for every exercise named across the four days, so whoever's holding the room doesn't have to hunt back through the agenda.</p>
 
-  <div class="grid grid-2">
-    <div class="tool-card"><span class="use">Monday · Individual → pairs</span><h4>Landscape Walk</h4><p>Solo reflection with 2–3 prompts, then trade one insight with a partner. Low-lift opener that surfaces real thinking before group dynamics kick in.</p></div>
-    <div class="tool-card"><span class="use">Monday · Whole group</span><h4>Spectrum Lines</h4><p>Physically position along a line between two poles on a stated belief; interview people at each end before moving to the next statement. Surfaces disagreement without a debate format.</p></div>
-    <div class="tool-card"><span class="use">Monday · Fishbowl</span><h4>Fishbowl Conversation</h4><p>A small group converses in the centre while the rest listen and later contribute written questions. Good for topics that need depth from a few voices rather than everyone talking at once.</p></div>
-    <div class="tool-card"><span class="use">Tuesday · Per-session</span><h4>The Four (Plus One) Questions</h4><p>Structured deep-dive format: relationship to mission, definition of success, doubts &amp; unknowns, questions back to the room, craft-signal tagging. Keeps every session comparable even though the content differs wildly.</p></div>
-    <div class="tool-card"><span class="use">Tuesday · Convergence</span><h4>Card Sort &amp; Dot-Vote</h4><p>Cluster raw signals into named groups, then vote with a constrained number of dots against a specific test ("which gap most limits the work"), not general preference.</p></div>
-    <div class="tool-card"><span class="use">Tuesday · Convergence</span><h4>Stress-Test the Shortlist</h4><p>Before locking in a converged decision, assign someone to argue against each finalist. Catches convergence that happened for social reasons rather than real signal.</p></div>
-    <div class="tool-card"><span class="use">Wednesday · Small group</span><h4>Craft Clinic (action-learning set)</h4><p>Structured peer consultation: present, clarify, offer, close. Rotates through several real decisions rather than going deep on one — built for volume of practical traction, not therapy-depth reflection.</p></div>
-    <div class="tool-card"><span class="use">Wednesday · Individual</span><h4>The Leadership Letter</h4><p>Private written commitment, sealed and returned later rather than read aloud — lowers performance pressure and makes the commitment genuinely personal.</p></div>
-  </div>
+  <section>
+    <div class="callout" style="margin-bottom:44px;">
+      <div class="mark">✎</div>
+      <p><strong>How to use this page.</strong> Each card names the day and format it's used in on the main agenda pages — this is the "how it works" reference to keep on hand while actually running the session.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>All the exercises</h2>
+    <div class="grid grid-2">
+      <div class="tool-card"><span class="use">Tuesday · Individual → pairs</span><h4>Landscape Walk</h4><p>Solo reflection with 2–3 prompts, then trade one insight with a partner. Low-lift opener that surfaces real thinking before group dynamics kick in.</p></div>
+      <div class="tool-card"><span class="use">Tuesday · Whole group</span><h4>Spectrum Lines</h4><p>Physically position along a line between two poles on a stated belief; interview people at each end before moving to the next statement. Surfaces disagreement without a debate format.</p></div>
+      <div class="tool-card"><span class="use">Tuesday · Fishbowl</span><h4>Fishbowl Conversation</h4><p>A small group converses in the centre while the rest listen and later contribute written questions. Good for topics that need depth from a few voices rather than everyone talking at once.</p></div>
+      <div class="tool-card"><span class="use">Monday · Per-session</span><h4>The Four (Plus One) Questions</h4><p>Structured deep-dive format: relationship to mission, definition of success, doubts &amp; unknowns, questions back to the room, craft-signal tagging. Keeps every session comparable even though the content differs wildly.</p></div>
+      <div class="tool-card"><span class="use">Monday · Convergence</span><h4>Card Sort &amp; Dot-Vote</h4><p>Cluster raw signals into named groups, then vote with a constrained number of dots against a specific test ("which gap most limits the work"), not general preference.</p></div>
+      <div class="tool-card"><span class="use">Monday · Convergence</span><h4>Stress-Test the Shortlist</h4><p>Before locking in a converged decision, assign someone to argue against each finalist. Catches convergence that happened for social reasons rather than real signal.</p></div>
+      <div class="tool-card"><span class="use">Wednesday · Small group</span><h4>Craft Clinic (action-learning set)</h4><p>Structured peer consultation: present, clarify, offer, close. Rotates through several real decisions rather than going deep on one — built for volume of practical traction, not therapy-depth reflection. Run twice on Wednesday, with an artefact sharpened between rounds.</p></div>
+    <div class="tool-card"><span class="use">Wednesday · Cross-group</span><h4>Craft Swap</h4><p>One host stays with each group's artefact while everyone else visits a different group to stress-test it. Forces contact between craft areas that would otherwise stay siloed in their own room all day.</p></div>
+      <div class="tool-card"><span class="use">Wednesday · Individual</span><h4>The Leadership Letter</h4><p>Private written commitment, sealed and returned later rather than read aloud — lowers performance pressure and makes the commitment genuinely personal.</p></div>
+    </div>
+  </section>
 
   <hr class="rule">
 
