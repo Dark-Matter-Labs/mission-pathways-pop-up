@@ -8,28 +8,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#14151a;
-    --bg-panel:#1b1d24;
-    --bg-panel-2:#20222a;
-    --text:#ece8de;
-    --text-dim:#9a9c9f;
-    --text-faint:#6a6c71;
-    --amber:#e2a63b;
-    --amber-dim:#8a6a2f;
-    --moss:#83a077;
-    --terracotta:#c1633b;
-    --line:rgba(236,232,222,0.11);
-    --line-strong:rgba(236,232,222,0.22);
+    --bg:#0b1130;
+    --bg-panel:rgba(255,255,255,0.06);
+    --bg-panel-2:rgba(255,255,255,0.10);
+    --text:#f5f7fc;
+    --text-dim:#bcc6e0;
+    --text-faint:#8590ae;
+    --amber:#f2ba4c;
+    --amber-dim:#a9803c;
+    --moss:#4fd1c5;
+    --terracotta:#e2795c;
+    --line:rgba(255,255,255,0.14);
+    --line-strong:rgba(255,255,255,0.26);
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background:var(--bg);
+    background:
+      radial-gradient(circle at 88% 92%, rgba(79,209,197,0.32), transparent 55%),
+      radial-gradient(circle at 8% 4%, rgba(90,102,224,0.28), transparent 45%),
+      linear-gradient(135deg, #0a0e28 0%, #142a63 35%, #1c4f7f 65%, #1c7c85 100%);
+    background-attachment:fixed;
+    background-size:cover;
     color:var(--text);
     font-family:'Inter',sans-serif;
     font-size:16px;
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
+  }
+  .card,.callout,.day-block,.logi,.schedgrid,.step,.ws-card,.chip,.tool-card,
+  .pattern-card,.agenda-day,.venue-gallery .g-item{
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   }
   h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;margin:0;color:var(--text);}
   .mono{font-family:'IBM Plex Mono',monospace;}
@@ -47,8 +56,8 @@
   /* ---- top nav ---- */
   .topbar{
     position:sticky;top:0;z-index:50;
-    background:rgba(20,21,26,0.92);
-    backdrop-filter:blur(10px);
+    background:rgba(10,14,38,0.55);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
     border-bottom:1px solid var(--line);
   }
   .topbar-inner{
@@ -138,7 +147,7 @@
   .cell{padding:14px 14px;border-right:1px solid var(--line);font-size:13px;color:var(--text-dim);display:flex;align-items:center;}
   .cell:last-child{border-right:none;}
   .cell.fill{color:var(--text);}
-  .cell.plenary{background:rgba(226,166,59,0.08);color:var(--text);font-weight:500;grid-column:span 4;justify-content:center;text-align:center;}
+  .cell.plenary{background:rgba(242,186,76,0.10);color:var(--text);font-weight:500;grid-column:span 4;justify-content:center;text-align:center;}
   .schedrow.plenaryrow{grid-template-columns:110px 1fr;}
   .track-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--bg);background:var(--moss);padding:2px 6px;border-radius:3px;margin-right:6px;}
   @media(max-width:900px){
@@ -178,7 +187,7 @@
   .ws-block li{margin-bottom:7px;}
   .ws-block li strong{color:var(--text);}
   .craft-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px;}
-  .craft-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--terracotta);border:1px solid rgba(193,99,59,0.4);padding:3px 8px;border-radius:20px;}
+  .craft-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--terracotta);border:1px solid rgba(226,121,92,0.45);padding:3px 8px;border-radius:20px;}
   .note{font-size:12px;color:var(--text-faint);font-style:italic;margin-top:10px;}
 
   .ws-card.tbc{border-style:dashed;border-color:var(--line-strong);background:transparent;}
@@ -205,7 +214,7 @@
   .pattern-block h5{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-faint);margin:0 0 7px;}
   .pattern-block p{color:var(--text-dim);font-size:14px;margin:0;line-height:1.6;}
   .pattern-block p em{color:var(--text);font-style:italic;}
-  .pattern-block.open{background:rgba(226,166,59,0.06);border:1px solid var(--amber-dim);border-radius:6px;padding:14px 16px;}
+  .pattern-block.open{background:rgba(242,186,76,0.09);border:1px solid var(--amber-dim);border-radius:6px;padding:14px 16px;}
   .pattern-block.open h5{color:var(--amber);}
   .shift-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:6px;}
   @media(max-width:800px){.shift-cols{grid-template-columns:1fr;}}
@@ -240,7 +249,7 @@
   .agenda-time{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);flex:none;width:74px;}
   .agenda-activity{font-size:12.5px;color:var(--text-dim);line-height:1.4;}
   .agenda-activity strong{color:var(--text);font-weight:500;}
-  .agenda-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--moss);border:1px solid rgba(131,160,119,0.35);border-radius:20px;padding:1px 6px;margin-left:5px;vertical-align:1px;}
+  .agenda-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--moss);border:1px solid rgba(79,209,197,0.4);border-radius:20px;padding:1px 6px;margin-left:5px;vertical-align:1px;}
 
   hr.rule{border:none;border-top:1px solid var(--line);margin:44px 0;}
 
@@ -254,8 +263,10 @@
 
   /* ---- form banner ---- */
   .form-banner{
-    background:var(--amber);
-    color:#1a1305;
+    background:rgba(10,14,38,0.55);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    color:var(--text);
+    border-bottom:1px solid var(--line);
     position:sticky;top:69px;z-index:40;
   }
   .form-banner-inner{
@@ -267,29 +278,29 @@
   .form-banner-text{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
   .form-banner-text .fb-eyebrow{
     font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;
-    text-transform:uppercase;background:#1a1305;color:var(--amber);
-    padding:3px 8px;border-radius:20px;flex:none;
+    text-transform:uppercase;background:var(--amber);color:var(--bg);
+    padding:3px 8px;border-radius:20px;flex:none;font-weight:500;
   }
-  .form-banner-text strong{font-family:'Fraunces',serif;font-size:15px;font-weight:600;}
-  .form-banner-text span{font-size:13px;color:#1a1305;opacity:0.85;}
+  .form-banner-text strong{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--text);}
+  .form-banner-text span{font-size:13px;color:var(--text-dim);}
   .btn-form{
     font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;
-    text-transform:uppercase;background:#1a1305;color:var(--amber);
-    padding:11px 20px;border-radius:6px;white-space:nowrap;
+    text-transform:uppercase;background:var(--amber);color:var(--bg);
+    padding:11px 20px;border-radius:20px;white-space:nowrap;font-weight:500;
     display:inline-flex;align-items:center;gap:8px;
     transition:transform .12s, box-shadow .12s;
     box-shadow:0 0 0 rgba(0,0,0,0);
   }
-  .btn-form:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,0.35);color:var(--amber);}
+  .btn-form:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(242,186,76,0.3);}
   .btn-form::after{content:"↗";}
   .form-close{
-    background:none;border:none;color:#1a1305;opacity:0.6;cursor:pointer;
+    background:none;border:none;color:var(--text-dim);opacity:0.7;cursor:pointer;
     font-size:16px;line-height:1;padding:4px;flex:none;
   }
-  .form-close:hover{opacity:1;}
+  .form-close:hover{opacity:1;color:var(--text);}
 
   .cta-form-card{
-    background:linear-gradient(135deg, rgba(226,166,59,0.14), rgba(226,166,59,0.04));
+    background:linear-gradient(135deg, rgba(242,186,76,0.16), rgba(242,186,76,0.05));
     border:1px solid var(--amber-dim);border-radius:8px;
     padding:28px 30px;
     display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
@@ -299,12 +310,12 @@
   .cta-form-card p{color:var(--text-dim);font-size:14px;margin:0;}
   .btn-form-big{
     font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.05em;
-    text-transform:uppercase;background:var(--amber);color:#1a1305;
-    padding:14px 26px;border-radius:6px;white-space:nowrap;flex:none;
-    display:inline-flex;align-items:center;gap:8px;font-weight:500;
+    text-transform:uppercase;background:var(--amber);color:var(--bg);
+    padding:14px 26px;border-radius:20px;white-space:nowrap;flex:none;
+    display:inline-flex;align-items:center;gap:8px;font-weight:600;
     transition:transform .12s, box-shadow .12s;
   }
-  .btn-form-big:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(226,166,59,0.25);}
+  .btn-form-big:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(242,186,76,0.35);}
   .btn-form-big::after{content:"↗";}
 
   /* ---- hero image ---- */
@@ -394,41 +405,15 @@
 
   <section>
     <h2>Why we're here</h2>
-    <p class="section-sub">Four aims carried across every session of the four days.</p>
-    <div class="grid grid-4">
-      <div class="card"><span class="num">01</span><h3>Shared alignment</h3><p>Make sense of the changing landscape together, clarify our emerging mission and strategy, and build collective ownership of where we're heading.</p></div>
-      <div class="card"><span class="num">02</span><h3>A stronger ecosystem</h3><p>Deepen relationships across our different areas of work, and create the conditions for new Stewards to lead with the community behind them.</p></div>
-      <div class="card"><span class="num">03</span><h3>Capability for what's ahead</h3><p>Explore the mindsets, practices and partnerships needed to navigate complexity and strengthen how we work together.</p></div>
-      <div class="card"><span class="num">04</span><h3>Energy and joy</h3><p>Space for curiosity, creativity and startup energy — reconnecting with the possibility of building something together.</p></div>
+    <p class="section-sub">Three things Mission Pathways exists to build. Three full days, together, giving them our full attention.</p>
+    <div class="grid grid-3">
+      <div class="card"><span class="num">01</span><h3>Relevance</h3><p>Staying genuinely useful to the risks the world actually faces — not just the ones we're comfortable with.</p></div>
+      <div class="card"><span class="num">02</span><h3>Assets</h3><p>More of what lets us do the work — relationships, capital, reputation, partnerships — and better ones.</p></div>
+      <div class="card"><span class="num">03</span><h3>Distribution</h3><p>Spreading who raises and holds those assets across the team, rather than leaving it to the same few people.</p></div>
     </div>
-  </section>
-
-  <hr class="rule">
-
-  <section>
-    <h2>Purpose, objectives, outcomes &amp; outputs</h2>
-    <p class="section-sub">Stated explicitly, so it's easier to see how each session's questions connect back to why we're gathering — and what "done well" actually looks like by Wednesday afternoon.</p>
-    <div class="grid grid-2">
-      <div class="card">
-        <span class="num">Purpose — why we're gathering</span>
-        <h3>Build shared strategy and craft, together</h3>
-        <p>To make sense of the changing landscape together, build a shared picture of what we're betting on for the next 1–2 years, strengthen the team's craft, and reconnect with the energy of building something together — before the next season of work begins.</p>
-      </div>
-      <div class="card">
-        <span class="num">Objectives — together we will</span>
-        <h3>Four things, in order</h3>
-        <p>Dive into ten live pieces of work to build shared understanding of the strategy that's emerging from them. Explore the future landscape and what it asks of DM. Name and build craft in the three areas that matter most right now. Opt in, individually, to what leadership requires of each of us next.</p>
-      </div>
-      <div class="card">
-        <span class="num">Outcomes — in order to</span>
-        <h3>What changes because of this week</h3>
-        <p>Everyone can represent DM's collective strategy and talent make-up externally. Pathway builders feel more confident and better supported in their craft. Cross-team coordination on shared partners gets stronger. DM Stewards have a clearer sense of how to support Mission Pathways and where the org is heading.</p>
-      </div>
-      <div class="card">
-        <span class="num">Outputs — what we leave with</span>
-        <h3>Tangible things, not just conversation</h3>
-        <p>The three named craft areas, each with a working artefact (checklist, protocol, template). A confidence map of who holds which craft, to lean on each other going forward. Personal Leadership Letters, sealed for three months. A shared, named list of DM's key assets — partnerships, capital, reputation — and how we're building them.</p>
-      </div>
+    <div class="callout" style="margin-top:28px;">
+      <div class="mark">”</div>
+      <p>We love doing this work together, and that's really what this week is: all of us, in one place, for three days, focused on exactly these three things. Get them right together, and so many of the other challenges we worry about tend to fade away on their own.</p>
     </div>
   </section>
 
