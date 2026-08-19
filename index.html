@@ -76,6 +76,15 @@
   }
   nav button:hover{color:var(--text);background:rgba(255,255,255,0.05);}
   nav button.active{color:var(--bg);background:var(--amber);}
+  nav a.nav-external{
+    color:var(--text-dim);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;
+    text-transform:uppercase;padding:9px 14px;border-radius:20px;
+    transition:background .15s,color .15s;
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  nav a.nav-external:hover{color:var(--text);background:rgba(255,255,255,0.05);}
+  nav a.nav-external::after{content:"↗";font-size:10px;}
 
   .page{max-width:1120px;margin:0 auto;padding:56px 28px 100px;display:none;}
   .page.active{display:block;}
@@ -377,6 +386,7 @@
       <button data-page="tuesday">Tuesday</button>
       <button data-page="wednesday">Wednesday</button>
       <button data-page="toolkit">Toolkit</button>
+      <a class="nav-external" href="https://dark-matter-labs.github.io/partnerships/" target="_blank" rel="noopener">Partnerships</a>
     </nav>
   </div>
 </div>
