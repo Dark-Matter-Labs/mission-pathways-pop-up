@@ -76,6 +76,15 @@
   }
   nav button:hover{color:var(--text);background:rgba(255,255,255,0.05);}
   nav button.active{color:var(--bg);background:var(--amber);}
+  nav a.nav-external{
+    color:var(--text-dim);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;
+    text-transform:uppercase;padding:9px 14px;border-radius:20px;
+    transition:background .15s,color .15s;
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  nav a.nav-external:hover{color:var(--text);background:rgba(255,255,255,0.05);}
+  nav a.nav-external::after{content:"↗";font-size:10px;}
 
   .page{max-width:1120px;margin:0 auto;padding:56px 28px 100px;display:none;}
   .page.active{display:block;}
@@ -377,6 +386,7 @@
       <button data-page="tuesday">Tuesday</button>
       <button data-page="wednesday">Wednesday</button>
       <button data-page="toolkit">Toolkit</button>
+      <a class="nav-external" href="https://dark-matter-labs.github.io/partnerships/" target="_blank" rel="noopener">Partnerships</a>
     </nav>
   </div>
 </div>
@@ -591,62 +601,25 @@
 <div class="page" id="preread">
   <div class="eyebrow">The Gathering Pre-Read · Read before Sunday</div>
   <h1 style="font-size:36px;margin:14px 0 10px;">Pre-Read: Mission, Landscape &amp; Where We Stand</h1>
-  <p class="sub" style="color:var(--text-dim);max-width:740px;margin-bottom:20px;">How DM currently understands its mission, where it will actively invest, and where it needs to constrain. Please read in advance so everyone joins the pop-up with a shared starting point.</p>
+  <p class="sub" style="color:var(--text-dim);max-width:740px;margin-bottom:16px;">How DM currently understands its mission, where it will actively invest, and where it needs to constrain. Please read in advance so everyone joins the pop-up with a shared starting point.</p>
+  <div class="meta-row" style="margin-bottom:24px;">
+    <div class="meta-item"><b>Covers</b> — Cycle 2, 2026: Aug 26 – Jan 27</div>
+  </div>
   <a class="btn-form-big" href="https://docs.google.com/presentation/d/1D4CxDbV2vBwqGS-FlhLOtgwT3gcY8gC75FxpQpq8GnE/edit?usp=sharing" target="_blank" rel="noopener" style="margin-bottom:32px;">Open the Pre-Read Deck</a>
   <div class="callout" style="margin-bottom:44px;">
     <div class="mark">”</div>
-    <p><strong>How to read this.</strong> Several sections are flagged as open, since the pre-read's own point is to invite scrutiny, not present a finished view.</p>
+    <p><strong>How to read this.</strong> The key points are below, up front. Everything under them is real detail, tucked into expandable sections — open the ones you want, skip the ones you don't. Several sections are flagged as open, since the pre-read's own point is to invite scrutiny, not present a finished view.</p>
   </div>
 
   <section>
-    <h2>Why this pre-read exists</h2>
-    <p class="section-sub">Acknowledging our context, before getting into mission and strategy.</p>
-    <div class="ws-frame" style="max-width:760px;margin-bottom:20px;">
-      One feature of DM's current system: many threads of work, driven by many different people. That has real benefits — no overreliance on any one partner, resilience to shocks, the ability to adapt as we learn, external accountability, and capacity for leadership from across the team. It also has real downsides — embedded fragmentation, difficulty finding coherence, bandwidth overstretch, and a harder path to building big, deep things through to follow-through.
-    </div>
-    <div class="grid grid-2" style="margin-bottom:20px;">
-      <div class="card">
-        <span class="num">The funding reality</span>
-        <p>Public sector funding is notoriously insufficient, slow and piecemeal. Philanthropy has helped create the conditions for bolder, larger-scale funding — but it's mostly project-based, 1–2 years at most, and can't be relied on long-term as the majority model.</p>
-      </div>
-      <div class="card">
-        <span class="num">Where core funding helps</span>
-        <p>Core funding such as JRF and QCF builds more coherence — but the underlying business model is still public- and philanthropy-funded and project-based, until DM can unlock recurring revenue or other forms of investment and private capital.</p>
-      </div>
-    </div>
-    <p class="ws-frame" style="max-width:760px;">To be relevant at the scale of the crisis gap will require organising resource and creativity at a different scale — and capital that recognises DM's work in ways neither the public nor private sector alone can currently sustain.</p>
-  </section>
-
-  <section>
-    <h2>How the team will use this material</h2>
-    <p class="section-sub">Different roles need different degrees of strategy resolution — designed for mission-holders, project-holders and pathways-builders alike.</p>
-    <div class="ws-cols" style="margin-bottom:20px;">
-      <div class="ws-block">
-        <h5>Cumulative — built up over time</h5>
-        <ul>
-          <li><strong>Golden threads</strong> — consistent themes across all our work</li>
-          <li><strong>Stories</strong> — about us, our best and our not-best</li>
-          <li><strong>Ambitions</strong> — the outcomes we want to make happen</li>
-          <li><strong>Insights</strong> — lessons learnt on constructing strategy well</li>
-        </ul>
-      </div>
-      <div class="ws-block">
-        <h5>Cyclical — refreshed twice a year</h5>
-        <ul>
-          <li><strong>Signals</strong> from the future that determine relevance</li>
-          <li>A <strong>trajectory</strong> to organise central energy and DM-level fundraising around</li>
-          <li>A <strong>landscape</strong> we can play within</li>
-          <li><strong>Investment areas</strong> DM can financially back with its own resources</li>
-        </ul>
-      </div>
-    </div>
-    <p class="ws-frame" style="max-width:760px;margin-bottom:20px;">Together, these inform the various strategies driven by people and teams across DM in response to their own conditions — held together by a learning system that's still in development.</p>
-    <div class="chiplist">
-      <span class="chip">Mission Pathways Stewards</span>
-      <span class="chip">Org Design Stewards</span>
-      <span class="chip">People &amp; Capacity Stewards</span>
-      <span class="chip">DM Members</span>
-      <span class="chip">Mission Pathways Leads</span>
+    <h2>The key points</h2>
+    <p class="section-sub">If you only take five things from this pre-read, take these — everything else on this page is detail behind them.</p>
+    <div class="grid grid-2">
+      <div class="card"><span class="num">Why we're gathering</span><h3>Shared strategy, craft &amp; energy</h3><p>Build a shared picture of what we're betting on for Cycle 2, strengthen the team's craft, and reconnect with the energy of building something together — before the next season begins.</p></div>
+      <div class="card"><span class="num">The driving question</span><h3>Held loosely, not yet confirmed</h3><p>What does it take for communities and societies to remain able to live, flourish and exercise real agency in a world of increasing systemic instability? Drawn from a lot of data and team insight — but not yet scrutinised as <em>the</em> question.</p></div>
+      <div class="card"><span class="num">What we bring</span><h3>Dark matter + the capacity to build it</h3><p>Expertise in surfacing the "dark matter" that shapes what's deemed possible — paired with the multi-disciplinary capacity to help structure the conditions that make alternatives real, not just propose them.</p></div>
+      <div class="card"><span class="num">The constraint</span><h3>Still public- &amp; philanthropy-funded</h3><p>Mostly project-based, 1–2 years at most. Unlocking recurring revenue or other investment and private capital is a large part of the point of this next phase.</p></div>
+      <div class="card"><span class="num">Two roles, one system</span><h3>Stewards amplify, Builders drive</h3><p>Mission Pathways Stewards hold the overall framework, landscape and coherence. Pathways Builders and Unit Leads hold day-to-day agency over how the work gets done, informed by what they learn from doing it.</p></div>
     </div>
   </section>
 
@@ -659,248 +632,340 @@
     </div>
   </section>
 
-  <hr class="rule">
-
   <section>
-    <h2>Golden threads</h2>
-    <p class="section-sub">DM's driving question, held loosely: <em>what does it take for communities and societies to remain able to live, flourish and exercise real agency in a world of increasing systemic instability?</em> DM's mission is to drive and share insight into this question so the wider field can act on it.</p>
-    <p class="note" style="margin-bottom:24px;">This question is drawn from a lot of data and team insight, but hasn't yet had sufficient scrutiny to be confirmed as <em>the</em> question.</p>
-    <div class="grid grid-3">
-      <div class="card">
-        <h3>Meeting societal risks</h3>
-        <p>Uncover what's actually relevant to avert unfolding crises and influence the politics to meet it — bridging horizons from what could be conceptually to what can be done now.</p>
-      </div>
-      <div class="card">
-        <h3>Open learning, power-with</h3>
-        <p>A focus on the capacity of the field beyond DM itself — sharing learning openly as standard, outcome-sharing and power-with partnerships that go beyond service contracts.</p>
-      </div>
-      <div class="card">
-        <h3>Multi-agent innovation</h3>
-        <p>Not government- or corporate-driven solutions, but mass, multi-agent, multi-capital means and capacities.</p>
-      </div>
-      <div class="card">
-        <h3>The dark matter</h3>
-        <p>A focus on the invisible underlying systems which, at scale, have meaningful relevance to the size of the risk — with particular technical competence here.</p>
-      </div>
-      <div class="card">
-        <h3>Entanglement &amp; relationality</h3>
-        <p>Inspecting the philosophies that drive everything — how we understand what it means to be human and in relationship with the world — and strengthening the relational field.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>What we bring to the table</h2>
-    <p class="ws-frame" style="max-width:760px;">A relentless commitment to the unfolding risks facing people, and to what it would actually take to chart — and picture — an alternative path. A posture of co-holding the mission and outcomes with partners across the full space of enquiry. Expertise in surfacing the "dark matter" that shapes what's deemed possible, and the underlying philosophies that code it — paired with the multi-disciplinary capacity not just to propose alternative routes but to help structure the conditions that make them real, including through DM's own resourcing.</p>
-    <div class="quote" style="margin-top:20px;">"What do you bring to the table? That seems to be a positioning question external partners ask of DM."</div>
-    <div class="quote-src">— Team comment, 10x100 Q2 2026</div>
-  </section>
-
-  <section>
-    <h2>Where partners see DM's USP</h2>
-    <div class="grid grid-2">
-      <div class="card">
-        <p style="color:var(--text);font-style:italic;">"Dm continues to challenge the underpinning conceptual assumptions about what makes for good governance, a good economy, a good society. Its art is in its ability to reframe with an eye towards its technical implications."</p>
-        <p class="quote-src" style="margin-top:10px;">— Marco Steinberg, Founder &amp; CEO, Snowcone</p>
-      </div>
-      <div class="card">
-        <p style="color:var(--text);font-style:italic;">"The team has the rare ability to make visible the deep design of everyday institutions that have locked societies into extractive relations — and to propose radical new institutional designs, deepening their learning by putting these into practice."</p>
-        <p class="quote-src" style="margin-top:10px;">— Kate Raworth, Co-founder, Doughnut Economics Action Lab</p>
-      </div>
-      <div class="card">
-        <p style="color:var(--text);font-style:italic;">"Dark Matter Labs is a wellspring of mind-bending, thought-provoking, and action-inspiring analyses and solutions — giving cities the tools and institutions they need to thrive in a volatile, ever-changing global economy."</p>
-        <p class="quote-src" style="margin-top:10px;">— Bruce Katz, Nowak Metro Finance Lab, Drexel University</p>
-      </div>
-      <div class="card">
-        <p style="color:var(--text);font-style:italic;">"By merging innovative foresight with strategic action, Dark Matter Labs equips organisations to thrive amid change while revealing opportunities for transformative investment."</p>
-        <p class="quote-src" style="margin-top:10px;">— Tomas Björkman, Ekskäret Foundation</p>
-      </div>
-    </div>
-    <p class="note" style="margin-top:16px;">All quotes from the Dm4 Season Book.</p>
-  </section>
-
-  <section>
-    <div class="callout">
-      <div class="mark">?</div>
-      <p><strong>An open metaphor, held lightly.</strong> One way of holding it: Dm as an independent R&amp;D laboratory for community and societal resilience — somewhere between a humble CERN and a NASA: like CERN, investigating the underlying rules of social systems; like NASA, turning that understanding into practical capability. A first idea that hasn't had team scrutiny yet — including the open question of whether it reads as too grandiose.</p>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  <section>
-    <h2>Stories of our work in practice</h2>
-    <div class="callout">
+    <div class="callout" style="margin-bottom:0;">
       <div class="mark">✎</div>
-      <p><strong>Still to come.</strong> A suggestion from the team: telling clearer stories about what we're doing, from the past to now. Bring stories that reveal where the work was most effective, where it wasn't, and what that taught us.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Ambitions the team holds</h2>
-    <div class="ws-cols">
-      <div class="ws-block">
-        <h5>In what we do</h5>
-        <ul>
-          <li>Steward a spreadable, highly relevant portfolio of interaffecting social-digital tools for multi-agent organising</li>
-          <li>£100 million of pooled funding to strategically allocate to the mission</li>
-          <li>Back a portfolio of initiatives that genuinely enable civilisational optionality</li>
-          <li>Increase our strategic relevance to the external risk landscape at every cycle</li>
-        </ul>
-      </div>
-      <div class="ws-block">
-        <h5>In how we do it</h5>
-        <ul>
-          <li>Become a truly machine-assisted human learning organisation</li>
-          <li>Be postured universally in power-with partner relationships</li>
-          <li>Increase our soft market valuation from the current £15–20 million, five-fold</li>
-          <li>Raise team pay and benefits as an attractor to DM, not a deterrent</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note" style="margin-top:14px;">Flagged as a first go — the team believes there's more here and wants it developed further.</p>
-  </section>
-
-  <hr class="rule">
-
-  <section>
-    <h2>Insights on building strategies that land</h2>
-
-    <h3 style="font-size:17px;margin-bottom:14px;">Our reputation — a first AI-assisted read</h3>
-    <div class="grid grid-2" style="margin-bottom:24px;">
-      <div class="card">
-        <h5 style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-faint);margin:0 0 12px;">By dimension</h5>
-        <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px;">
-          <li><strong>Very strong:</strong> intellectual originality; trust among EU, UN, city &amp; philanthropic partners</li>
-          <li><strong>Strong:</strong> systems-design &amp; experimental capability; ethical integrity, no material public controversy</li>
-          <li><strong>Moderate–strong:</strong> practical instruments &amp; adoption, concentrated in a few projects</li>
-          <li><strong>Moderate–weak:</strong> independently quantified long-term outcomes</li>
-          <li><strong>Weak–moderate:</strong> clarity about what DML actually is</li>
-          <li><strong>Underdeveloped:</strong> organisational identity beyond Indy Johar</li>
-          <li><strong>High risk:</strong> founder-dependency</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h5 style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-faint);margin:0 0 12px;">By audience</h5>
-        <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px;">
-          <li><strong>Systems-change practitioners:</strong> very high regard</li>
-          <li><strong>Regenerative economics circles:</strong> influential, thought-leading</li>
-          <li><strong>Public innovation labs:</strong> respected collaborator</li>
-          <li><strong>Civic tech / design communities:</strong> innovative, experimental</li>
-          <li><strong>Traditional business operators:</strong> often too abstract</li>
-          <li><strong>Venture / startup ecosystem:</strong> not commercially oriented</li>
-          <li><strong>Grassroots activists:</strong> mixed — visionary, sometimes elite</li>
-        </ul>
-      </div>
-    </div>
-    <div class="quote">"A highly respected frontier systems-change lab with strong intellectual influence, admired for ambition and originality, but sometimes criticised for abstraction and unclear pathways to scalable implementation."</div>
-    <div class="quote-src" style="margin-bottom:14px;">— Summary: high credibility, incomplete legibility, under-consolidated proof</div>
-    <span class="see-also" data-goto="patterns">2026 Patterns picks this apart further — see Pattern 3, "funders buy proof now"</span>
-    <div style="margin-bottom:28px;"></div>
-
-    <h3 style="font-size:17px;margin-bottom:14px;">Strategy insights from across the team</h3>
-    <div class="grid grid-2" style="margin-bottom:24px;">
-      <div class="card"><h3 style="font-size:15px;">Requisite variety</h3><p>The variety within a system must be at least as great as the variety of the environment it's responding to — in tension with the desire for focus and simplicity.</p></div>
-      <div class="card"><h3 style="font-size:15px;">Resonance</h3><p>We don't attract what we want — we attract what we are.</p></div>
-      <div class="card"><h3 style="font-size:15px;">Gödel's incompleteness</h3><p>We can't think our way out of a system using the mind that built it.</p></div>
-      <div class="card"><h3 style="font-size:15px;">Dialogic strategy</h3><p>The best strategies form dialogically with the field, funders and partners. Advanced alone, they often quickly die.</p></div>
-      <div class="card"><h3 style="font-size:15px;">Follow-through</h3><p>Idea → weaving &amp; implementation → reflection &amp; feedback, with real closure — then going again.</p></div>
-      <div class="card"><h3 style="font-size:15px;">Spread &amp; focus</h3><p>The recurring shape underneath almost every pathway: a broad exploratory phase before conditions allow narrowing into demonstration.</p></div>
-      <div class="card"><h3 style="font-size:15px;">Builder + driver + enabler</h3><p>Healthy pathway work needs all three — rarely present in one person: pathway building, operational drive, and condition/team enablement.</p></div>
-      <div class="card"><h3 style="font-size:15px;">Projects-per-person</h3><p>Often correlates inversely with efficacy — ultimately a business model and resourcing question DM hasn't fully solved.</p></div>
-    </div>
-
-    <div class="grid grid-2" style="margin-bottom:24px;">
-      <div class="card">
-        <h3 style="font-size:15px;">A maturity ladder for funding</h3>
-        <p>Growth Pot → XCO pre-seed → tooling/demonstration fund is a potential progression, designed and now being tested. Explicit staging can serve as intentional gates for review and validation.</p>
-      </div>
-      <div class="card">
-        <h3 style="font-size:15px;">Spin-in / spin-out as an endgame</h3>
-        <p>Mature initiatives can "spin in" to their own legal entity under the DML Group while still drawing on DM's protocols and backend (RZ is the current example), or spin out fully independently. This reframes DM's role: less a single delivering organisation, more an ecosystem orchestrator.</p>
-      </div>
-      <div class="card">
-        <h3 style="font-size:15px;">DM's own capital as catalytic</h3>
-        <p>When DM brings its own capital (e.g. RZ, XCO) into an early-stage partnership, it can unlock conditions that wouldn't otherwise exist — but seemingly only when staged as an escalating, mutual commitment.</p>
-      </div>
-      <div class="card">
-        <h3 style="font-size:15px;">Demonstration changes everything</h3>
-        <p>At the point anything reaches real-world demonstration, ecosystem orchestration — and everything that requires — becomes critical.</p>
-      </div>
-    </div>
-
-    <h3 style="font-size:17px;margin-bottom:14px;">The craft of pathways building</h3>
-    <div class="chiplist">
-      <span class="chip">Build the field, conversation &amp; demand first — 6–9 months before needing the resource</span>
-      <span class="chip">Only move one step adjacent to real experience — geography, capability, or domain</span>
-      <span class="chip">Always hold more than one option; single-option positions are too vulnerable</span>
-      <span class="chip">The first excited funder is rarely the finisher</span>
-      <span class="chip">Learning transmitted weekly &amp; daily is the greatest strategic asset</span>
-      <span class="chip">The posture you build a relationship with is the posture that embeds — hard to change later</span>
-      <span class="chip">Write the summaries, minutes, provocations — that's often where the real strategic work happens</span>
-      <span class="chip">Relationship-holding is itself a strategic asset; insincerity shows quickly</span>
-      <span class="chip">Field-building requires an external posture — internal focus alone caps you</span>
+      <p><strong>Stories of our work in practice — still to come.</strong> A suggestion from the team: telling clearer stories about what we're doing, from the past to now. Bring stories that reveal where the work was most effective, where it wasn't, and what that taught us.</p>
     </div>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2>DM-level fundraising</h2>
-    <p class="section-sub">DM's next large-scale fundraise is organised into three connected layers — each also a constraint/prioritisation function.</p>
-    <div class="grid grid-3" style="margin-bottom:20px;">
-      <div class="card"><span class="num">Funded</span><h3>XCO</h3><p>Where a proven position becomes an actual investable deal.</p></div>
-      <div class="card"><span class="num">Emerging</span><h3>Coordination tooling</h3><p>Tooling that lets multiple actors align, commit, and follow through on an entangled position. No dedicated resourcing yet — possible pathway through QCF.</p></div>
-      <div class="card"><span class="num">Unfunded</span><h3>The precursor layer (Dm Next)</h3><p>Where a position gets found and shaped before either of the above is possible — the layer DM has always worked in, running on borrowed time and unallocated capacity rather than a funded structure of its own.</p></div>
-    </div>
-    <div class="callout">
-      <div class="mark">!</div>
-      <p><strong>The throttle.</strong> DM now has the conditions and relationships to raise significant funds, but lacks the strategic readiness to move it with integrity to the commitments that would require. Unlikely to get another tranche after raising £50–100m — the money has to move well enough to catalyse other economies. <em>Our current throttle is more strategy than fundraising.</em></p>
-    </div>
-    <span class="see-also" data-goto="patterns" style="margin-top:12px;display:inline-block;">2026 Patterns has more on this — see Pattern 6, "funders under pressure," and Pattern 1, "winning less on open bids"</span>
-  </section>
+    <h2>The fuller detail</h2>
+    <p class="section-sub">Five expandable sections, roughly in the order the deck covers them. Open whichever's useful; none of it is required reading beyond the key points above.</p>
 
-  <hr class="rule">
+    <details class="expand" style="margin-bottom:14px;">
+      <summary>Context, roles &amp; how this material works</summary>
+      <div class="expand-body">
+        <h3 style="font-size:17px;margin-bottom:10px;">Acknowledging our context</h3>
+        <div class="ws-frame" style="max-width:760px;margin-bottom:20px;">
+          One feature of DM's current system: many threads of work, driven by many different people. That has real benefits — no overreliance on any one partner, resilience to shocks, the ability to adapt as we learn, external accountability, and capacity for leadership from across the team. It also has real downsides — embedded fragmentation, difficulty finding coherence, bandwidth overstretch, and a harder path to building big, deep things through to follow-through.
+        </div>
+        <div class="grid grid-2" style="margin-bottom:20px;">
+          <div class="card">
+            <span class="num">The funding reality</span>
+            <p>Public sector funding is notoriously insufficient, slow and piecemeal. Philanthropy has helped create the conditions for bolder, larger-scale funding — but it's mostly project-based, 1–2 years at most, and can't be relied on long-term as the majority model.</p>
+          </div>
+          <div class="card">
+            <span class="num">Where core funding helps</span>
+            <p>Core funding such as JRF and QCF builds more coherence — but the underlying business model is still public- and philanthropy-funded and project-based, until DM can unlock recurring revenue or other forms of investment and private capital.</p>
+          </div>
+        </div>
+        <p class="ws-frame" style="max-width:760px;margin-bottom:24px;">To be relevant at the scale of the crisis gap will require organising resource and creativity at a different scale — and capital that recognises DM's work in ways neither the public nor private sector alone can currently sustain.</p>
 
-  <section>
-    <h2>Season recaps — how DM got here</h2>
-    <div class="grid grid-2">
-      <div class="card">
-        <span class="num">2016 – 2019</span>
-        <h3>Season 1</h3>
-        <p>Started within 00 as a 5-person experiment (Indy, Eunji, Jack, Chloe, Carlotta). Project-based grants and contracts. Began with provocation blogs, talks and invitations. Identified system mapping, alternative financing, multi-agent collaboration and blockchain-secured smart contracting as emerging tech — with an assumption those stacks couldn't yet be funded together, so DM focused on "dark matter" components instead. Key work: UNDP Istanbul Innovation Days, Legitimate Cities, A Smart Commons, TreesAI.</p>
-      </div>
-      <div class="card">
-        <span class="num">2019 – 2022</span>
-        <h3>Season 2</h3>
-        <p>Grew to 25 (2019), then 60 (2021). First standalone entity in the Netherlands, then Canada, South Korea, Sweden and UK. EU work became 60%+ of income. Main work: Healthy Clean Cities, UNDP Cities. By 2021, sought to reduce EU-funding reliance; TreesAI boomed with Google's Impact Accelerator. By season's end: a longing for real-world prototypes — "system demonstrators" identified as the key unit needed.</p>
-      </div>
-      <div class="card">
-        <span class="num">2022 – 2025</span>
-        <h3>Season 3</h3>
-        <p>Stable at 60–70 people; project + core funding, with Laudes funding critical infrastructure. Matrix established to make sense of the portfolio. Realised System Demonstrators are hard to fund directly — DM could only play enabling roles. New opportunities opened: NZC, Planetary Civics, Life-ennobling Economics, 7 Gen Cities, Cornerstone Indicators, Many-to-Many contracts, CircuLaw, Permissioning the City. Some Labs (DmCS, Beyond the Rules) secured core funding and began to consolidate.</p>
-      </div>
-      <div class="card">
-        <span class="num">2025 – present</span>
-        <h3>Season 4</h3>
-        <p>Stewards and Health Keepers established via the Governance Gap Committee — a major governance shift. Funding sources now include investment alongside grants and core funding. Still discovering: Civilisational Options as a sharper driver for demonstration investment, and a tooling fund aimed at a clear stack of tools for civic innovation. This is the season we're in now.</p>
-      </div>
-    </div>
-    <div class="quote" style="margin-top:24px;">"We laid out this ambition for season 3 to transition from a 'starburst' portfolio in discovery, to choosing where to invest and build with intention. On hindsight, we underestimated what it would take to really architect this throughout the organisation, and our governance system was a barrier to that."</div>
-    <div class="quote-src">— Indy &amp; Annette, on DM's story, May 2026</div>
-  </section>
+        <h3 style="font-size:17px;margin-bottom:10px;">How the team will use this material</h3>
+        <p class="section-sub">Different roles need different degrees of strategy resolution — designed for mission-holders, project-holders and pathways-builders alike.</p>
+        <div class="ws-cols" style="margin-bottom:20px;">
+          <div class="ws-block">
+            <h5>Cumulative — built up over time</h5>
+            <ul>
+              <li><strong>Golden threads</strong> — consistent themes across all our work</li>
+              <li><strong>Stories</strong> — about us, our best and our not-best</li>
+              <li><strong>Ambitions</strong> — the outcomes we want to make happen</li>
+              <li><strong>Insights</strong> — lessons learnt on constructing strategy well</li>
+            </ul>
+          </div>
+          <div class="ws-block">
+            <h5>Cyclical — refreshed twice a year</h5>
+            <ul>
+              <li><strong>Signals</strong> from the future that determine relevance</li>
+              <li>A <strong>trajectory</strong> to organise central energy and DM-level fundraising around</li>
+              <li>A <strong>landscape</strong> we can play within</li>
+              <li><strong>Investment areas</strong> DM can financially back with its own resources</li>
+            </ul>
+          </div>
+        </div>
+        <p class="ws-frame" style="max-width:760px;margin-bottom:20px;">Together, these inform the various strategies driven by people and teams across DM in response to their own conditions — held together by a learning system that's still in development.</p>
+        <div class="chiplist" style="margin-bottom:28px;">
+          <span class="chip">Mission Pathways Stewards</span>
+          <span class="chip">Org Design Stewards</span>
+          <span class="chip">People &amp; Capacity Stewards</span>
+          <span class="chip">DM Members</span>
+          <span class="chip">Mission Pathways Leads</span>
+        </div>
 
-  <hr class="rule">
+        <h3 style="font-size:17px;margin-bottom:10px;">Roles recap</h3>
+        <p class="section-sub">Mission Pathways Stewards, and Pathways Builders &amp; Unit Leads.</p>
+        <div class="ws-cols" style="margin-bottom:20px;">
+          <div class="ws-block">
+            <h5>Mission Pathways Stewards</h5>
+            <p style="color:var(--text-dim);font-size:13.5px;margin:0;">Hold oversight of DM Pathways' overall health, coherence, and connection into the wider Mission. They steward the overall framework of DM and its landscape and trajectory. They amplify the agency and leadership of the rest of the team rather than being a layer of approval or management for it — spotting where support, resourcing, coherence, field-building or connection is needed, and enabling that.</p>
+          </div>
+          <div class="ws-block">
+            <h5>Pathways Builders &amp; Unit Leads</h5>
+            <p style="color:var(--text-dim);font-size:13.5px;margin:0;">Retain the day-to-day agency and decision-making authority over how the work actually gets done, and drive directions of the work based on what they've learnt from doing it — amplified by the systems view the Stewards can offer.</p>
+          </div>
+        </div>
+        <p class="section-sub" style="margin-bottom:14px;">These roles link into other circles. Some of what gets tended to at each intersection:</p>
+        <div class="grid grid-2">
+          <div class="card"><span class="num">Mission &amp; Pathways × Capability &amp; People</span><p>What kind of organisation does DM need to become, and do we have the right people? Is strategy connected to the people actually doing the work? What capabilities do we need to develop to realise our mission?</p></div>
+          <div class="card"><span class="num">Capability &amp; People × Org Design &amp; Structures</span><p>How do we ensure sustainable capacity and fair distribution of work: where is burnout accumulating, who's carrying disproportionate risk, and how do we mitigate that? What liberating structures do we need for people to work at their best?</p></div>
+          <div class="card"><span class="num">Org Design &amp; Structures × Mission &amp; Pathways</span><p>Financial viability of the portfolio: is the pathway mix sustainable, where is financial risk accumulating? Do we have the right org structure to deliver our mission?</p></div>
+          <div class="card"><span class="num">Healthkeepers</span><p>Whole-organisation inflection decisions: restructuring, major geographic or thematic shifts, significant staffing decisions, response to external risk. The org-level decision-making body.</p></div>
+        </div>
+      </div>
+    </details>
 
-  <section>
-    <h2>Our landscape</h2>
-    <p class="section-sub">DM commits to a landscape for a full six-month cycle as its shared organising frame — up to 20% of activity can fall outside it as probes, and both the activity and the landscape system itself get reviewed between cycles.</p>
-    <div class="grid grid-3">
-      <div class="card"><span class="num">What</span><h3>Landscape = Matrix</h3><p>An updated matrix is pending — the current organising view of where DM plays.</p></div>
-      <div class="card"><span class="num">How</span><h3>Landscape = craft spiral</h3><p>How the work actually gets done cycle over cycle — also marked pending.</p></div>
-      <div class="card"><span class="num">Where &amp; who with</span><h3>Priority locations &amp; partners</h3><p>Still in development — the team is building the CRM of locations and partners behind this view.</p></div>
-    </div>
-    <p class="note" style="margin-top:16px;">Worth naming directly in the room: to do this really well, we still need a great learning and information flow system around this, rather than assuming it exists.</p>
+    <details class="expand" style="margin-bottom:14px;">
+      <summary>Mission, identity &amp; what we bring</summary>
+      <div class="expand-body">
+        <h3 style="font-size:17px;margin-bottom:10px;">Golden threads</h3>
+        <p class="section-sub">DM's driving question, held loosely: <em>what does it take for communities and societies to remain able to live, flourish and exercise real agency in a world of increasing systemic instability?</em> DM's mission is to drive and share insight into this question so the wider field can act on it.</p>
+        <p class="note" style="margin-bottom:20px;">This question is drawn from a lot of data and team insight, but hasn't yet had sufficient scrutiny to be confirmed as <em>the</em> question.</p>
+        <div class="quote" style="margin-bottom:8px;">"Dark Matter Labs emerged from a recognition that societal change is stifled primarily due to the entrenchment of deeply coded systems — the rules, laws, norms and cultures that govern how we live together — and a relentless commitment to challenge assumptions of the status quo and to build 'real-world options' that demonstrate alternate futures."</div>
+        <div class="quote-src" style="margin-bottom:20px;">— Dm4 Season Book</div>
+        <div class="grid grid-3" style="margin-bottom:28px;">
+          <div class="card">
+            <h3>Meeting societal risks</h3>
+            <p>Uncover what's actually relevant to avert unfolding crises and influence the politics to meet it — bridging horizons from what could be conceptually to what can be done now.</p>
+          </div>
+          <div class="card">
+            <h3>Open learning, power-with</h3>
+            <p>A focus on the capacity of the field beyond DM itself — sharing learning openly as standard, outcome-sharing and power-with partnerships that go beyond service contracts.</p>
+          </div>
+          <div class="card">
+            <h3>Multi-agent innovation</h3>
+            <p>Not government- or corporate-driven solutions, but mass, multi-agent, multi-capital means and capacities.</p>
+          </div>
+          <div class="card">
+            <h3>The dark matter</h3>
+            <p>A focus on the invisible underlying systems which, at scale, have meaningful relevance to the size of the risk — with particular technical competence here.</p>
+          </div>
+          <div class="card">
+            <h3>Entanglement &amp; relationality</h3>
+            <p>Inspecting the philosophies that drive everything — how we understand what it means to be human and in relationship with the world — and strengthening the relational field.</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:17px;margin-bottom:10px;">What we bring to the table</h3>
+        <p class="ws-frame" style="max-width:760px;">A relentless commitment to the unfolding risks facing people, and to what it would actually take to chart — and picture — an alternative path. A posture of co-holding the mission and outcomes with partners across the full space of enquiry. Expertise in surfacing the "dark matter" that shapes what's deemed possible, and the underlying philosophies that code it — paired with the multi-disciplinary capacity not just to propose alternative routes but to help structure the conditions that make them real, including through DM's own resourcing.</p>
+        <div class="quote" style="margin-top:20px;">"What do you bring to the table? That seems to be a positioning question external partners ask of DM."</div>
+        <div class="quote-src" style="margin-bottom:28px;">— Team comment, 10x100 Q2 2026</div>
+
+        <h3 style="font-size:17px;margin-bottom:10px;">Where partners see DM's USP</h3>
+        <div class="grid grid-2" style="margin-bottom:16px;">
+          <div class="card">
+            <p style="color:var(--text);font-style:italic;">"Dm continues to challenge the underpinning conceptual assumptions about what makes for good governance, a good economy, a good society. Its art is in its ability to reframe with an eye towards its technical implications."</p>
+            <p class="quote-src" style="margin-top:10px;">— Marco Steinberg, Founder &amp; CEO, Snowcone</p>
+          </div>
+          <div class="card">
+            <p style="color:var(--text);font-style:italic;">"The team has the rare ability to make visible the deep design of everyday institutions that have locked societies into extractive relations — and to propose radical new institutional designs, deepening their learning by putting these into practice."</p>
+            <p class="quote-src" style="margin-top:10px;">— Kate Raworth, Co-founder, Doughnut Economics Action Lab</p>
+          </div>
+          <div class="card">
+            <p style="color:var(--text);font-style:italic;">"Dark Matter Labs is a wellspring of mind-bending, thought-provoking, and action-inspiring analyses and solutions — giving cities the tools and institutions they need to thrive in a volatile, ever-changing global economy."</p>
+            <p class="quote-src" style="margin-top:10px;">— Bruce Katz, Nowak Metro Finance Lab, Drexel University</p>
+          </div>
+          <div class="card">
+            <p style="color:var(--text);font-style:italic;">"By merging innovative foresight with strategic action, Dark Matter Labs equips organisations to thrive amid change while revealing opportunities for transformative investment."</p>
+            <p class="quote-src" style="margin-top:10px;">— Tomas Björkman, Ekskäret Foundation</p>
+          </div>
+          <div class="card">
+            <p style="color:var(--text);font-style:italic;">"There are no other organisations that I know of that see through the various 'crises' of the day, or even of the decade, to identify the deep-rooted causes of our existential threats. Rather than taking the easy path to quick fixes and band-aid approaches, Dm bring to the fore the ways in which the 'dark matter' of our society, our economy and our relations, human and non-human, make the climate crisis and other related impacts such as loss of bio-diversity the inevitable and expected outcome of the design of these substrates of society — rather than a kind of malignant force plaguing us."</p>
+            <p class="quote-src" style="margin-top:10px;">— Tim Marshall, Deputy Vice-Chancellor, Design and Social Context &amp; Vice President, RMIT University</p>
+          </div>
+        </div>
+        <p class="note" style="margin-bottom:28px;">All quotes from the Dm4 Season Book.</p>
+
+        <div class="callout">
+          <div class="mark">?</div>
+          <p><strong>An open metaphor, held lightly — not yet scrutinised by the team.</strong> One way of holding it: Dm as an independent R&amp;D laboratory for community and societal resilience — but more action-research and design/demonstration than arms-length R&amp;D — playing a role somewhere between a humble CERN and a NASA: like CERN, investigating the underlying rules of social systems; like NASA, turning that understanding into practical capability for humanity. It investigates the underlying social and material systems that enable communities and societies to remain capable of flourishing and exercising agency in an increasingly unstable world, translating that learning into real-world experiments and capabilities. Independent of political influence or shareholders, but interdependent with 1 trillion+ planetary living species — including the open question of whether this reads as too grandiose.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="expand" style="margin-bottom:14px;">
+      <summary>Ambitions the team holds, in full</summary>
+      <div class="expand-body">
+        <div class="ws-cols">
+          <div class="ws-block">
+            <h5>In what we do</h5>
+            <ul>
+              <li>Steward a spreadable, highly relevant portfolio of interaffecting social-digital tools for multi-agent organising</li>
+              <li>£100 million of pooled funding to strategically allocate to the mission</li>
+              <li>Back a portfolio of initiatives that genuinely enable civilisational optionality</li>
+              <li>Increase our strategic relevance to the external risk landscape at every cycle</li>
+            </ul>
+          </div>
+          <div class="ws-block">
+            <h5>In how we do it</h5>
+            <ul>
+              <li>Become a truly machine-assisted human learning organisation</li>
+              <li>Be postured universally in power-with partner relationships</li>
+              <li>Increase our soft market valuation from the current £15–20 million, five-fold</li>
+              <li>Raise team pay and benefits as an attractor to DM, not a deterrent</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note" style="margin-top:14px;">Flagged as a first go — the team believes there's more here and wants it developed further.</p>
+      </div>
+    </details>
+
+    <details class="expand" style="margin-bottom:14px;">
+      <summary>Insights on building strategies that land, in full</summary>
+      <div class="expand-body">
+        <h3 style="font-size:17px;margin-bottom:14px;">Our reputation — a first AI-assisted read</h3>
+        <div class="grid grid-2" style="margin-bottom:24px;">
+          <div class="card">
+            <h5 style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-faint);margin:0 0 12px;">By dimension</h5>
+            <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px;">
+              <li><strong>Very strong:</strong> intellectual originality; trust among EU, UN, city &amp; philanthropic partners</li>
+              <li><strong>Strong:</strong> systems-design &amp; experimental capability; ethical integrity, no material public controversy</li>
+              <li><strong>Moderate–strong:</strong> practical instruments &amp; adoption, concentrated in a few projects</li>
+              <li><strong>Moderate–weak:</strong> independently quantified long-term outcomes</li>
+              <li><strong>Weak–moderate:</strong> clarity about what DML actually is</li>
+              <li><strong>Underdeveloped:</strong> organisational identity beyond Indy Johar</li>
+              <li><strong>High risk:</strong> founder-dependency</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h5 style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-faint);margin:0 0 12px;">By audience</h5>
+            <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px;">
+              <li><strong>Systems-change practitioners:</strong> very high regard</li>
+              <li><strong>Regenerative economics circles:</strong> influential, thought-leading</li>
+              <li><strong>Public innovation labs:</strong> respected collaborator</li>
+              <li><strong>Civic tech / design communities:</strong> innovative, experimental</li>
+              <li><strong>Traditional business operators:</strong> often too abstract</li>
+              <li><strong>Venture / startup ecosystem:</strong> not commercially oriented</li>
+              <li><strong>Grassroots activists:</strong> mixed — visionary, sometimes elite</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote">"A highly respected frontier systems-change lab with strong intellectual influence, admired for ambition and originality, but sometimes criticised for abstraction and unclear pathways to scalable implementation."</div>
+        <div class="quote-src" style="margin-bottom:14px;">— Summary: high credibility, incomplete legibility, under-consolidated proof</div>
+        <span class="see-also" data-goto="patterns">2026 Patterns picks this apart further — see Pattern 3, "funders buy proof now"</span>
+        <div style="margin-bottom:28px;"></div>
+
+        <h3 style="font-size:17px;margin-bottom:14px;">Strategy insights from across the team</h3>
+        <div class="grid grid-2" style="margin-bottom:24px;">
+          <div class="card"><h3 style="font-size:15px;">Requisite variety</h3><p>The variety within a system must be at least as great as the variety of the environment it's responding to — in tension with the desire for focus and simplicity.</p></div>
+          <div class="card"><h3 style="font-size:15px;">Resonance</h3><p>We don't attract what we want — we attract what we are.</p></div>
+          <div class="card"><h3 style="font-size:15px;">Gödel's incompleteness</h3><p>We can't think our way out of a system using the mind that built it.</p></div>
+          <div class="card"><h3 style="font-size:15px;">Dialogic strategy</h3><p>The best strategies form dialogically with the field, funders and partners. Advanced alone, they often quickly die.</p></div>
+          <div class="card"><h3 style="font-size:15px;">Follow-through</h3><p>Idea → weaving &amp; implementation → reflection &amp; feedback, with real closure — then going again.</p></div>
+          <div class="card"><h3 style="font-size:15px;">Spread &amp; focus</h3><p>The recurring shape underneath almost every pathway: a broad exploratory phase before conditions allow narrowing into demonstration.</p></div>
+          <div class="card"><h3 style="font-size:15px;">Builder + driver + enabler</h3><p>Healthy pathway work needs all three — rarely present in one person: pathway building, operational drive, and condition/team enablement.</p></div>
+          <div class="card"><h3 style="font-size:15px;">Projects-per-person</h3><p>Often correlates inversely with efficacy — ultimately a business model and resourcing question DM hasn't fully solved.</p></div>
+        </div>
+
+        <div class="grid grid-2" style="margin-bottom:24px;">
+          <div class="card">
+            <h3 style="font-size:15px;">A maturity ladder for funding</h3>
+            <p>Growth Pot → XCO pre-seed → tooling/demonstration fund is a potential progression, designed and now being tested. Explicit staging can serve as intentional gates for review and validation.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:15px;">Spin-in / spin-out as an endgame</h3>
+            <p>Mature initiatives can "spin in" to their own legal entity under the DML Group while still drawing on DM's protocols and backend (RZ is the current example), or spin out fully independently. This reframes DM's role: less a single delivering organisation, more an ecosystem orchestrator.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:15px;">DM's own capital as catalytic</h3>
+            <p>When DM brings its own capital (e.g. RZ, XCO) into an early-stage partnership, it can unlock conditions that wouldn't otherwise exist — but seemingly only when staged as an escalating, mutual commitment.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:15px;">Demonstration changes everything</h3>
+            <p>At the point anything reaches real-world demonstration, ecosystem orchestration — and everything that requires — becomes critical.</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:17px;margin-bottom:14px;">The craft of pathways building</h3>
+        <div class="chiplist" style="margin-bottom:24px;">
+          <span class="chip">Build the field, conversation &amp; demand first — 6–9 months before needing the resource</span>
+          <span class="chip">Only move one step adjacent to real experience — geography, capability, or domain</span>
+          <span class="chip">Always hold more than one option; single-option positions are too vulnerable</span>
+          <span class="chip">The first excited funder is rarely the finisher</span>
+          <span class="chip">Learning transmitted weekly &amp; daily is the greatest strategic asset</span>
+          <span class="chip">The posture you build a relationship with is the posture that embeds — hard to change later</span>
+          <span class="chip">Write the summaries, minutes, provocations — that's often where the real strategic work happens</span>
+          <span class="chip">Relationship-holding is itself a strategic asset; insincerity shows quickly</span>
+          <span class="chip">Field-building requires an external posture — internal focus alone caps you</span>
+        </div>
+        <p class="note">The full deck also maps a typical partner journey — the wanted and unwanted paths a partner relationship can take, and the assets that help — as a linked Miroboard. See the Pre-Read Deck above for that map; it's too detailed to reproduce well here.</p>
+      </div>
+    </details>
+
+    <details class="expand">
+      <summary>Fundraising, how we got here &amp; our landscape</summary>
+      <div class="expand-body">
+        <h3 style="font-size:17px;margin-bottom:10px;">DM-level fundraising</h3>
+        <p class="section-sub">DM's next large-scale fundraise is organised into three connected layers — each also a constraint/prioritisation function.</p>
+        <div class="grid grid-3" style="margin-bottom:20px;">
+          <div class="card"><span class="num">Funded</span><h3>XCO</h3><p>Where a proven position becomes an actual investable deal.</p></div>
+          <div class="card"><span class="num">Emerging</span><h3>Coordination tooling</h3><p>Tooling that lets multiple actors align, commit, and follow through on an entangled position. No dedicated resourcing yet — possible pathway through QCF.</p></div>
+          <div class="card"><span class="num">Unfunded</span><h3>The precursor layer (Dm Next)</h3><p>Where a position gets found and shaped before either of the above is possible — the layer DM has always worked in, running on borrowed time and unallocated capacity rather than a funded structure of its own.</p></div>
+        </div>
+        <div class="callout" style="margin-bottom:20px;">
+          <div class="mark">!</div>
+          <p><strong>The throttle.</strong> DM now has the conditions and relationships to raise significant funds, but lacks the strategic readiness to move it with integrity to the commitments that would require. Unlikely to get another tranche after raising £50–100m — the money has to move well enough to catalyse other economies. <em>Our current throttle is more strategy than fundraising.</em></p>
+        </div>
+        <span class="see-also" data-goto="patterns" style="margin-bottom:28px;display:inline-block;">2026 Patterns has more on this — see Pattern 6, "funders under pressure," and Pattern 1, "winning less on open bids"</span>
+
+        <h3 style="font-size:17px;margin-bottom:10px;">Season recaps — how DM got here</h3>
+        <div class="grid grid-2" style="margin-bottom:24px;">
+          <div class="card">
+            <span class="num">2016 – 2019</span>
+            <h3>Season 1</h3>
+            <p>Started within 00 as a 5-person experiment (Indy, Eunji, Jack, Chloe, Carlotta). Project-based grants and contracts. Began with provocation blogs, talks and invitations. Identified system mapping, alternative financing, multi-agent collaboration and blockchain-secured smart contracting as emerging tech — with an assumption those stacks couldn't yet be funded together, so DM focused on "dark matter" components instead. Key work: UNDP Istanbul Innovation Days, Legitimate Cities, A Smart Commons, TreesAI.</p>
+          </div>
+          <div class="card">
+            <span class="num">2019 – 2022</span>
+            <h3>Season 2</h3>
+            <p>Grew to 25 (2019), then 60 (2021). First standalone entity in the Netherlands, then Canada, South Korea, Sweden and UK. EU work became 60%+ of income. Main work: Healthy Clean Cities, UNDP Cities. By 2021, sought to reduce EU-funding reliance; TreesAI boomed with Google's Impact Accelerator. By season's end: a longing for real-world prototypes — "system demonstrators" identified as the key unit needed.</p>
+          </div>
+          <div class="card">
+            <span class="num">2022 – 2025</span>
+            <h3>Season 3</h3>
+            <p>Stable at 60–70 people; project + core funding, with Laudes funding critical infrastructure. Matrix established to make sense of the portfolio. Realised System Demonstrators are hard to fund directly — DM could only play enabling roles. New opportunities opened: NZC, Planetary Civics, Life-ennobling Economics, 7 Gen Cities, Cornerstone Indicators, Many-to-Many contracts, CircuLaw, Permissioning the City. Some Labs (DmCS, Beyond the Rules) secured core funding and began to consolidate.</p>
+          </div>
+          <div class="card">
+            <span class="num">2025 – present</span>
+            <h3>Season 4</h3>
+            <p>Stewards and Health Keepers established via the Governance Gap Committee — a major governance shift. Funding sources now include investment alongside grants and core funding. Still discovering: Civilisational Options as a sharper driver for demonstration investment, and a tooling fund aimed at a clear stack of tools for civic innovation. This is the season we're in now.</p>
+          </div>
+        </div>
+        <div class="quote" style="margin-top:24px;">"We laid out this ambition for season 3 to transition from a 'starburst' portfolio in discovery, to choosing where to invest and build with intention. On hindsight, we underestimated what it would take to really architect this throughout the organisation, and our governance system was a barrier to that."</div>
+        <div class="quote-src" style="margin-bottom:28px;">— Indy &amp; Annette, on DM's story, May 2026</div>
+
+        <h3 style="font-size:17px;margin-bottom:10px;">Our landscape</h3>
+        <p class="section-sub">DM commits to a landscape for a full six-month cycle as its shared organising frame — up to 20% of activity can fall outside it as probes, and both the activity and the landscape system itself get reviewed between cycles.</p>
+        <div class="grid grid-3" style="margin-bottom:20px;">
+          <div class="card"><span class="num">What</span><h3>Landscape = Matrix</h3><p>An updated matrix is pending — the current organising view of where DM plays.</p></div>
+          <div class="card"><span class="num">How</span><h3>Landscape = craft spiral</h3><p>How the work actually gets done cycle over cycle — also marked pending.</p></div>
+          <div class="card"><span class="num">Where &amp; who with</span><h3>Priority locations &amp; partners</h3><p>Still in development — the team is building the CRM of locations and partners behind this view.</p></div>
+        </div>
+        <p class="note" style="margin-bottom:24px;">Worth naming directly in the room: to do this really well, we still need a great learning and information flow system around this, rather than assuming it exists.</p>
+
+        <h4 style="font-size:15px;margin-bottom:10px;">DM's diverging landscapes of enquiry to date</h4>
+        <p class="section-sub">Six questions the Matrix gave a frame to — the actual shape of where DM has chosen to look.</p>
+        <div class="ws-cols" style="margin-bottom:20px;">
+          <div class="ws-block">
+            <ul>
+              <li><strong>Which societal risk fields?</strong> Food systems, net zero, housing and construction, urban place-making, bioregions…</li>
+              <li><strong>Which bits of dark matter?</strong> Governance, regulation, policy, financial systems, monetary systems…</li>
+              <li><strong>Which geographies?</strong> Europe, UK, Nordics, South Korea, Turtle Island…</li>
+            </ul>
+          </div>
+          <div class="ws-block">
+            <ul>
+              <li><strong>Which types of multi-agent innovation?</strong> Self-sovereign agents (land, house), bioregional financing, registries (provenance, ontologies), permissioning…</li>
+              <li><strong>What role do we play?</strong> Provoke, propose, demonstrate, invest, learn with others…</li>
+              <li><strong>What scale of influence?</strong> Neighbourhood, organisational, supply chain, city, sector, national, public sector discourse…</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Trade-offs: pros are resilience, non-reliance, agency to follow interests; cons are bandwidth, follow-through, coherence. We need the capacity to both constrain and diverge our enquiry landscapes.</p>
+      </div>
+    </details>
   </section>
 
   <div class="footer-nav">
