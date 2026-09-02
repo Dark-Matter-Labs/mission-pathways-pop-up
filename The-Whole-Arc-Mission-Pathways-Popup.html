@@ -257,6 +257,12 @@ footer .wrap{max-width:1080px}
 .evstandalone{margin-top:16px;max-width:var(--col)}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:rgba(158,113,24,.14);padding:1px 5px;border-radius:3px}
 
+/* ---------- AI declaration bar ---------- */
+.aibar{background:var(--shade);color:#C9D2CA;border-bottom:1px solid rgba(255,255,255,.12)}
+.aibar-in{max-width:1080px;margin:0 auto;padding:13px 24px;font-family:'Bricolage Grotesque',sans-serif;font-size:13.5px;line-height:1.5}
+.aibar strong{color:var(--ochre-bright);font-weight:600}
+@media(max-width:860px){.aibar-in{padding:12px 20px;font-size:13px}}
+
 /* ---------- images ---------- */
 .imgband{margin:0;line-height:0}
 .imgband img{width:100%;height:auto;display:block}
@@ -407,6 +413,12 @@ window.EVENT_LINKS = {
   "d3-closing":    {label:"Closing circle — what I offer, what I take", day:"Wed"}
 };
 </script>
+
+<div class="aibar">
+  <div class="aibar-in">
+    <strong>AI-generated synthesis.</strong> This site was produced with Claude from the recordings, session notes, decks and photographs of the three days, then reviewed by people who were there. The research, judgements and values are those of the contributors named throughout. Claims are tagged for how they are known, and the verification log lists what is still unconfirmed. Treat it as a working document, not a record of decisions.
+  </div>
+</div>
 
 <header class="hero">
   <div class="wrap">
@@ -995,7 +1007,7 @@ window.EVENT_LINKS = {
     <h3 style="font-size:22px;margin:38px 0 6px">What we came away with</h3>
     <p class="note" style="max-width:62ch;margin-bottom:18px">Measured against what people wrote down beforehand, this is the ledger on the credit side.</p>
     <div class="grid g3">
-      <div class="cell"><h4>The honest conversations happened</h4><p>Trees AI reviewed openly as a misallocation. The Collaborative&#8217;s allocation week described candidly. Our own selection process called opaque, in the room, by someone affected by it. The security framing conceded in full when challenged. This was the most-feared failure and it did not occur.</p></div>
+      <div class="cell"><h4>The honest conversations happened</h4><p>The Collaborative&#8217;s allocation week described candidly, including people arriving with mandates to bring money home. Our own selection process called opaque, in the room, by someone affected by it. The security framing conceded in full when challenged. This was the most-feared failure and it did not occur.</p></div>
       <div class="cell"><h4>Real nos were said</h4><p>No to reviving a lab whose external label would harm the work. No to positioning ourselves as advisors. No to short-term engagement work in New York. No to working anywhere in the Global South without a genuine partner on the ground.</p></div>
       <div class="cell"><h4>Craft was transferred, not just described</h4><p>The constructing politics session walked through how a position was actually built, move by move, including the mistakes. The sharpest single ask on the wishlist &#8212; how different projects built legitimacy &#8212; was answered directly.</p></div>
       <div class="cell"><h4>Two workstreams left with owners</h4><p>Pooled funds ended with a working group, a channel, an agreed comparison structure and a first thing to build. Tooling ended with named owners. Both were wishlist items that moved from feeling it out to being held.</p></div>
@@ -1207,6 +1219,13 @@ window.EVENT_LINKS = {
     <div class="lbl">Provenance</div>
     <h2 class="sec">How to read this, and what needs checking</h2>
 
+    <div class="callout">
+      <h4>How this was made</h4>
+      <p>This synthesis was drafted with Claude from a defined source base: 32 session records, the parallel voice-memo recordings, eight decks, 27 photographs, the pre-read and wishlist, and the reviewed session notes in the Circle. It was not researched from the open web, and nothing here comes from a model&#8217;s general knowledge.</p>
+      <p>It has been reviewed by people who were in the room, and corrected in several passes &#8212; attributions, figures, framings and one session that was rewritten from the reviewed note rather than the recording. The research, judgements and values are those of the contributors named throughout; the drafting, structuring and cross-referencing are AI-assisted.</p>
+      <p>Two things follow from that. Fluency is not accuracy, so anything load-bearing should be checked against the linked session note before it is used in a decision or repeated to a partner. And the tidiness of a synthesis can flatten disagreement, so where the room did not converge, this document says so rather than resolving it.</p>
+    </div>
+
     <div class="grid g2">
       <div class="cell"><h4>Evidence tags</h4>
         <p><span class="ev ev-said">Said</span> spoken in a recorded session, cross-checked between the two parallel recordings where both exist.</p>
@@ -1261,7 +1280,7 @@ window.EVENT_LINKS = {
     <button id="btnExpand" style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:600;background:var(--ochre-bright);color:#1B2A22;border:0;padding:13px 22px;border-radius:4px;cursor:pointer">Switch on full detail</button>
     <div class="callout warn" style="margin-top:34px;background:rgba(165,64,43,.16);border-left-color:#E08A72">
       <h4 style="color:#F3F5EF">Internal only</h4>
-      <p style="color:#D8DED8">Please keep this website for internal Dm sharing. Full detail includes a verification log listing the eight items the recordings do not settle.</p>
+      <p style="color:#D8DED8">Please keep this website for internal Dm sharing. It is an AI-generated synthesis reviewed by people who were there &#8212; check anything load-bearing against the linked session note. Full detail includes a verification log listing what the recordings do not settle.</p>
     </div>
   </div>
 </section>
@@ -1288,7 +1307,7 @@ window.EVENT_LINKS = {
 <footer>
   <div class="wrap">
     <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;color:#EDEFE9;margin-bottom:8px"><strong>The Whole Arc</strong> — synthesis of the Mission Pathways Pop-up and Stewards gathering, Seend, 24–26 August 2026.</p>
-    <p style="max-width:66ch">Harvested from the recordings, decks and photographs of all three days. Assembled with AI support and reviewed against the source recordings; every claim is tagged for how it is known. That includes the section scoring the gathering against the wishlist and the opening and closing circles. Corrections are welcome and expected — the point of publishing the verification log is that it gets used.</p>
+    <p style="max-width:66ch">Harvested from the recordings, decks and photographs of all three days. Drafted with the assistance of AI tools, principally Claude, from a defined base of session recordings, notes, decks and photographs; the underlying research, judgements and values remain those of the human contributors named throughout. Reviewed and corrected by people who were there. Every claim is tagged for how it is known, and the verification log lists what is still unconfirmed. Corrections are welcome and expected — the point of publishing the verification log is that it gets used.</p>
     <p style="max-width:66ch;margin-top:14px">Please keep this website for internal Dm sharing.</p>
   </div>
 </footer>
