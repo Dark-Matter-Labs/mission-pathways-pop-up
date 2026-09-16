@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business &amp; Operating Model — State of Play</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#E7EDEC;
+  --sky-deep:#D6E1E0;
+  --field:#EADFC5;
+  --field-deep:#E0D2B0;
+  --shade:#1B2A22;
+  --shade-2:#243429;
+  --ink:#212A25;
+  --slate:#5B655E;
+  --ochre:#9E7118;
+  --ochre-bright:#C79A2E;
+  --flare:#A5402B;
+  --rule:rgba(33,42,37,.18);
+  --rule-soft:rgba(33,42,37,.10);
+  --col:min(70ch, 100%);
+  --c1:#4E6E8C;   /* social contract / standards */
+  --c2:#A5402B;   /* missions & strategies */
+  --c3:#4F7A5E;   /* resourcing / business model */
+  --c4:#7A5B8C;   /* foundational governance */
+  --c5:#B0821F;   /* operations */
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--sky);color:var(--ink);
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:17.5px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4,.ui{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-optical-sizing:auto}
+h1,h2,h3,h4{margin:0;line-height:1.12;font-weight:600;letter-spacing:-.015em}
+p{margin:0 0 1.05em}
+a{color:var(--ochre);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--flare)}
+strong{font-weight:600}
+
+.band{padding:64px 24px;position:relative}
+.band--sky{background:var(--sky)}
+.band--field{background:var(--field)}
+.band--shade{background:var(--shade);color:#EDEFE9}
+.band--shade h2,.band--shade h3,.band--shade h4{color:#F3F5EF}
+.band--shade a{color:var(--ochre-bright)}
+.band--shade .lede,.band--shade .note{color:#B9C4BB}
+.band + .band{border-top:1px solid var(--rule-soft)}
+.band--shade + .band, .band + .band--shade{border-top:none}
+.wrap{max-width:1080px;margin:0 auto}
+.prose{max-width:var(--col);margin-left:auto;margin-right:auto}
+.prose--left{margin-left:0}
+
+.lbl{
+  font-family:'Bricolage Grotesque',sans-serif;font-size:12.5px;font-weight:600;
+  letter-spacing:.01em;color:var(--ochre);display:flex;align-items:baseline;gap:10px;margin-bottom:14px;
+}
+.lbl::after{content:"";flex:1;height:1px;background:var(--ochre);opacity:.35}
+.band--shade .lbl{color:var(--ochre-bright)}
+.band--shade .lbl::after{background:var(--ochre-bright)}
+
+h2.sec{font-size:clamp(28px,3.6vw,40px);margin-bottom:10px;max-width:26ch}
+.lede{font-size:19px;color:var(--slate);max-width:64ch;margin-bottom:30px}
+.note{font-size:14.5px;color:var(--slate);line-height:1.5}
+
+.topbar{
+  position:sticky;top:0;z-index:60;background:rgba(231,237,236,.94);
+  backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--rule);
+}
+.topbar-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:18px;flex-wrap:wrap}
+.mark{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14.5px;white-space:nowrap}
+.mark span{font-weight:400;color:var(--slate)}
+.jump{display:flex;gap:2px;flex-wrap:wrap;font-family:'Bricolage Grotesque',sans-serif;font-size:12.5px}
+.jump a{color:var(--ink);text-decoration:none;padding:7px 10px;border-radius:14px;opacity:.75;white-space:nowrap}
+.jump a:hover{background:var(--field);opacity:1;color:var(--ink)}
+@media(max-width:980px){.jump{display:none}}
+
+.aibar{background:var(--shade);color:#C9D2CA;border-bottom:1px solid rgba(255,255,255,.12)}
+.aibar-in{max-width:1080px;margin:0 auto;padding:13px 24px;font-family:'Bricolage Grotesque',sans-serif;font-size:13.5px;line-height:1.5}
+.aibar strong{color:var(--ochre-bright);font-weight:600}
+
+.callout{background:var(--field);border-left:3px solid var(--ochre);padding:20px 22px;margin:26px 0}
+.band--field .callout{background:var(--field-deep)}
+.callout.warn{background:rgba(165,64,43,.09);border-left-color:var(--flare)}
+.callout h4{font-size:16px;margin-bottom:8px}
+.callout p:last-child,.callout li:last-child{margin-bottom:0}
+.callout p,.callout li{font-size:15.5px}
+
+ul.tight{margin:0 0 1em;padding-left:1.1em}
+ul.tight li{margin-bottom:.5em}
+ul.tight li::marker{color:var(--ochre)}
+ol.tight{margin:0 0 1em;padding-left:1.2em}
+ol.tight li{margin-bottom:.6em}
+ol.tight li::marker{color:var(--ochre);font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+
+table{width:100%;border-collapse:collapse;font-size:15px;margin:22px 0}
+th{
+  font-family:'Bricolage Grotesque',sans-serif;font-size:12.5px;font-weight:600;text-align:left;
+  padding:9px 12px 9px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom;color:var(--slate)
+}
+td{padding:13px 12px 13px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top;line-height:1.45}
+td:last-child,th:last-child{padding-right:0}
+tr.warn td{background:rgba(165,64,43,.06)}
+.tag{
+  display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:11px;font-weight:600;
+  padding:2px 7px;border-radius:3px;border:1px solid currentColor;white-space:nowrap
+}
+.t-active{color:#2E6B4F}
+.t-loss{color:var(--flare)}
+.t-closed{color:var(--slate)}
+
+.ev{
+  font-family:'Bricolage Grotesque',sans-serif;font-size:10.5px;font-weight:700;
+  padding:1px 5px;border-radius:2px;vertical-align:2px;white-space:nowrap;margin-left:5px;
+}
+.ev-said{background:rgba(46,107,79,.15);color:#25573F}
+.ev-inf{background:rgba(70,90,140,.14);color:#3C4E78}
+.ev-unv{background:rgba(165,64,43,.14);color:#8C331F}
+.band--shade .ev-said{background:rgba(120,205,160,.2);color:#A5E0BF}
+.band--shade .ev-inf{background:rgba(150,175,235,.18);color:#B3C6EF}
+.band--shade .ev-unv{background:rgba(230,130,105,.2);color:#EDA893}
+
+details.acc{border-top:1px solid var(--rule-soft);padding:0}
+details.acc:last-of-type{border-bottom:1px solid var(--rule-soft)}
+details.acc>summary{
+  cursor:pointer;list-style:none;padding:16px 30px 16px 0;position:relative;
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:17px;letter-spacing:-.01em
+}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary::after{content:"+";position:absolute;right:4px;top:14px;font-weight:400;font-size:20px;color:var(--ochre)}
+details.acc[open]>summary::after{content:"–"}
+details.acc>summary:hover{color:var(--ochre)}
+details.acc .body{padding:0 0 22px;max-width:var(--col)}
+details.acc .body p{font-size:16px}
+.smeta{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;color:var(--slate);margin-bottom:12px}
+
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:860px){.g2,.g3{grid-template-columns:1fr}}
+
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule-soft);margin:8px 0 30px}
+.stat{background:var(--field);padding:22px}
+.stat .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;color:var(--flare);display:block;line-height:1}
+.stat .l{font-size:13.5px;color:var(--slate);margin-top:6px;line-height:1.4}
+@media(max-width:860px){.statgrid{grid-template-columns:1fr 1fr}}
+
+.findings{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;background:var(--rule-soft)}
+.findings li{background:var(--sky);padding:18px 20px;display:grid;grid-template-columns:34px 1fr auto;gap:16px;align-items:baseline}
+.findings .fi{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--ochre)}
+.findings .ft{font-size:16px}
+.findings a.fl{font-family:'Bricolage Grotesque',sans-serif;font-size:12.5px;white-space:nowrap;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+@media(max-width:700px){.findings li{grid-template-columns:1fr;gap:4px}}
+
+/* entity table */
+.gloss{display:grid;grid-template-columns:170px 1fr;gap:8px 22px;font-size:15.5px}
+.gloss dt{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px}
+.gloss dd{margin:0 0 12px;color:var(--slate)}
+
+/* framework categories */
+.fw{display:flex;flex-direction:column;gap:2px;background:var(--rule-soft);margin:22px 0}
+.fw-row{background:var(--sky);display:grid;grid-template-columns:280px 1fr;gap:0}
+.fw-cat{padding:18px 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14.5px;
+  color:#fff;display:flex;align-items:center;line-height:1.3}
+.fw-items{padding:18px 20px}
+.fw-items div{font-size:15px;margin-bottom:8px}
+.fw-items div:last-child{margin-bottom:0}
+.fw-items b{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:var(--ochre);margin-right:6px}
+@media(max-width:760px){.fw-row{grid-template-columns:1fr}}
+
+/* experiment cards */
+.expwrap{display:flex;flex-direction:column;gap:26px;margin:22px 0}
+.expgroup{border-left:4px solid var(--c1);padding-left:18px}
+.expgroup h4{font-size:16px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.expgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--rule-soft)}
+.expcard{background:var(--sky);padding:16px 18px}
+.expcard .en{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;color:var(--ochre);display:block;margin-bottom:6px}
+.expcard h5{font-size:15px;font-weight:600;margin-bottom:8px;line-height:1.3}
+.expcard p{font-size:14px;color:var(--slate);margin:0;line-height:1.45}
+@media(max-width:760px){.expgrid{grid-template-columns:1fr}}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 0}
+.chip{
+  font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:500;
+  border:1px solid var(--rule);padding:5px 11px;border-radius:14px;background:rgba(255,255,255,.5)
+}
+
+.pull{border-left:2px solid var(--ochre);padding:2px 0 2px 18px;margin:22px 0;font-size:19px;line-height:1.4}
+.pull cite{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:12.5px;font-style:normal;color:var(--slate);margin-top:8px}
+
+footer{background:var(--shade);color:#9DAAA0;padding:44px 24px 60px;font-size:14px}
+footer a{color:var(--ochre-bright)}
+footer .wrap{max-width:1080px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:rgba(158,113,24,.14);padding:1px 5px;border-radius:3px}
+
+@media(max-width:860px){
+  .band{padding:46px 20px}
+  body{font-size:16.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="mark">Business &amp; Operating Model <span>· State of Play, Sep 2026</span></div>
+    <nav class="jump">
+      <a href="#glance">In five minutes</a>
+      <a href="#why">Why it's built this way</a>
+      <a href="#costs">What it costs</a>
+      <a href="#people">People &amp; capacity</a>
+      <a href="#open">Open questions</a>
+      <a href="#experiments">Governance Gap experiments</a>
+      <a href="#evolve">Where we can evolve</a>
+      <a href="#next">What's needed next</a>
+    </nav>
+  </div>
+</div>
+
+<div class="aibar">
+  <div class="aibar-in">
+    <strong>AI-generated synthesis.</strong> Produced with Claude from the recording of an internal working session on Dm's business and operating model (16 September 2026), plus a separately supplied roadmap image of the current Governance Gap experiments. Individual staff members discussed as examples are anonymised, at the session's own request. Claims drawn directly from what was said are tagged <span class="ev ev-said">Said</span>; this document's own synthesis or connective reasoning is tagged <span class="ev ev-inf">Inference</span>; points that still need checking against source data are tagged <span class="ev ev-unv">Unverified</span>. Treat this as a working diagnostic to take into the next round, not a finished or approved account.
+  </div>
+</div>
+
+<!-- ================= GLANCE ================= -->
+<section class="band band--field" id="glance">
+  <div class="wrap">
+    <div class="lbl">In five minutes</div>
+    <h2 class="sec">What's actually driving the cost and complexity of how Dm is built</h2>
+    <p class="lede">If you read nothing else on this page, read this section — everything below just backs it up.</p>
+
+    <div class="prose prose--left">
+      <p>Dm operates as a group of legal entities — the UK, a Dutch BV, Sweden, South Korea, and (until this year) Canada — built up one contract, one government requirement, one tax jurisdiction at a time. No single decision produced this shape; it accreted. The result is a structure nobody currently holds as living knowledge: basic questions about why it's set up this way could not be answered from memory in this session, or in an earlier one.<span class="ev ev-said">Said</span></p>
+      <p>That matters because the shape of the group is not free. Multiple entities sharing staff across borders triggers transfer pricing, which requires time recording, which — on top of being a genuine cost-recognition necessity for grant-funded work — is also actively corroding collaboration inside the organisation. Underneath that sits a second, quieter problem: the organisation doesn't yet have the data (income by funding type, unfunded time across the group, a capacity benchmark) that a considered decision about any of this would need.<span class="ev ev-inf">Inference</span></p>
+    </div>
+
+    <div class="statgrid">
+      <div class="stat"><span class="n">~£100k/yr</span><span class="l">unrecoverable VAT in the Dutch BV, because most of its income is grant-exempt while its real costs (freelancers, cross-entity staff time, professional fees) sit outside that exemption</span></div>
+      <div class="stat"><span class="n">≥£60k</span><span class="l">estimated hole in Net Zero Cities time recording this year — partly under-logging, partly people not doing the funded work forecast for their FTE</span></div>
+      <div class="stat"><span class="n">2.3 FTE</span><span class="l">finance capacity for a group of roughly 50–55 FTE spread across five jurisdictions — with no external benchmark yet for whether that's adequate</span></div>
+    </div>
+
+    <div class="callout">
+      <h4>The single sentence version</h4>
+      <p>Dm's operating model wasn't designed for the shape it's now in — entities, staff and time-recording rules that once solved specific contract or compliance problems now generate an ongoing tax, admin and cultural cost that nobody has stepped back to re-decide, and the organisation doesn't yet hold the data it would need to make that re-decision well.<span class="ev ev-inf">Inference</span></p>
+    </div>
+
+    <div class="lbl" style="margin-top:34px">Six things worth knowing, fast</div>
+    <ul class="findings">
+      <li><span class="fi">01</span><span class="ft">The Dutch BV exists because there's no not-for-profit company status under Dutch law — it was set up as a standard company with an asset lock, not as the alternative (a foundation) that would have avoided VAT exposure.</span><a class="fl" href="#why">Why it's built this way →</a></li>
+      <li><span class="fi">02</span><span class="ft">Multi-entity staffing is the single biggest driver of cost: it creates the transfer-pricing obligation, which is why time recording exists at all, on top of its use for grant cost-reporting.</span><a class="fl" href="#costs">What it costs →</a></li>
+      <li><span class="fi">03</span><span class="ft">Time recording is named directly as a driver of hoarding, isolation and lower collaboration — a live cultural cost, not a hypothetical one.</span><a class="fl" href="#people">People &amp; capacity →</a></li>
+      <li><span class="fi">04</span><span class="ft">Sweden and South Korea are both loss-making; Sweden is additionally capped by a state-aid "de-minimis" threshold and can't take more public funding without ~40% co-funding unless a structural fix lands.</span><a class="fl" href="#why">Why it's built this way →</a></li>
+      <li><span class="fi">05</span><span class="ft">There's no current, shared decision on portfolio focus — work is taken on if it's "aligned to objectives," with no explicit balance check against the operational cost of running it.</span><a class="fl" href="#open">Open questions →</a></li>
+      <li><span class="fi">06</span><span class="ft">A set of Governance Gap experiments is already running against parts of this picture — but two of the biggest levers named in this session (deciding the entity question, and building financial abundance broadly) don't yet have a clear owner among them.</span><a class="fl" href="#experiments">Governance Gap experiments →</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="band band--sky" id="why">
+  <div class="wrap">
+    <div class="lbl">Why it's built this way</div>
+    <h2 class="sec">Five entities, five separate reasons — none of them wrong on their own</h2>
+    <p class="lede">Each entity was a rational answer to a specific problem at the time. The complexity is emergent, not designed.</p>
+
+    <table>
+      <thead><tr><th>Entity</th><th>Status</th><th>Why it exists</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="who">United Kingdom</td>
+          <td><span class="tag t-active">Active · strongest</span></td>
+          <td>Most diversified entity — higher day-rate work alongside cost-reporting contracts, and has attracted the most philanthropic funding, including core funding (which is itself hard to distribute usefully across the rest of the group).<span class="ev ev-said">Said</span></td>
+        </tr>
+        <tr>
+          <td class="who">Netherlands (BV)</td>
+          <td><span class="tag t-active">Active · largest contract</span></td>
+          <td>Set up to hold Dm's largest single contract, a European Commission-funded programme, which needed a European entity to run through. Dutch law has no not-for-profit company status as such; the choice was a standard BV with an asset lock in its articles, rather than a foundation (which would likely have avoided the VAT exposure described below). Nobody in this session could recall how that original choice was made.<span class="ev ev-said">Said</span></td>
+        </tr>
+        <tr class="warn">
+          <td class="who">Sweden</td>
+          <td><span class="tag t-loss">Active · loss-making</span></td>
+          <td>Needed to hold government-agency contracts locally. Has hit a state-aid "de-minimis" threshold that treats its work as economic activity; above that threshold, further public funding requires roughly 40% co-funding, which currently makes it non-viable. A fix is in progress: forming an association with an external partner to have the work reclassified as non-economic.<span class="ev ev-said">Said</span></td>
+        </tr>
+        <tr class="warn">
+          <td class="who">South Korea</td>
+          <td><span class="tag t-loss">Active · loss-making, low visibility</span></td>
+          <td>Set up around a specific government contract, on a similar cost-reporting basis. The group has materially less financial visibility into it than the other entities and relies on locally produced accounts; whether its current activity is sustainable hasn't yet been independently assessed.<span class="ev ev-said">Said</span></td>
+        </tr>
+        <tr>
+          <td class="who">Canada</td>
+          <td><span class="tag t-closed">Closed, 2026</span></td>
+          <td>Dissolved deliberately as a complexity-reduction step, and named in the session as a clean example of that working.<span class="ev ev-said">Said</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pull">
+      "The reason we're only realising now we've got a permanent establishment in Spain is because the team has grown." <cite>On how growth quietly creates new compliance exposure the group didn't design for — the same dynamic is now being checked for Germany.<span class="ev ev-said">Said</span></cite>
+    </div>
+
+    <p>The thread underneath all five is the same: people employed by one entity routinely work on another entity's funded contracts. That is the single biggest lever behind the group's cost base — it is what creates the transfer-pricing obligation, and transfer pricing is what makes time recording a legal necessity rather than a management preference, on top of its separate use in grant cost-reporting.<span class="ev ev-inf">Inference</span></p>
+  </div>
+</section>
+
+<!-- ================= COSTS ================= -->
+<section class="band band--field" id="costs">
+  <div class="wrap">
+    <div class="lbl">What the structure costs us</div>
+    <h2 class="sec">Four cost drivers, all downstream of the same root cause</h2>
+    <p class="lede">None of these are mismanagement in isolation. They are the predictable price of running a small organisation like a multinational.</p>
+
+    <details class="acc" open>
+      <summary>VAT — roughly £100k a year, unrecoverable</summary>
+      <div class="body">
+        <div class="smeta">Netherlands (BV)</div>
+        <p>Grant income is VAT-exempt, but a large share of the BV's real costs — freelancer fees, professional fees, and the cross-entity staff time charged in via transfer pricing — fall outside that exemption. Because turnover is so heavily grant-based, none of the VAT on those costs can be reclaimed. Roughly £30k has already gone into professional advice investigating a fix, without one yet found; simply raising the transfer-pricing margin to cover it was floated and immediately ruled out in the session, since it would just mean paying more VAT rather than saving any.<span class="ev ev-said">Said</span></p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary>Professional fees and the Oyster (EOR) contract</summary>
+      <div class="body">
+        <p>£50k has gone on professional fees year-to-date, now under active review with those firms asked to justify the spend. Separately, Dm uses an Employer-of-Record service (Oyster) to employ staff in countries without a local entity — adopted to cut the internal admin burden of employing people directly worldwide, but its fees are now judged "extortionate," with termination planned by year end in favour of local tax and employment advisers doing the same compliance work more cheaply.<span class="ev ev-said">Said</span></p>
+        <p>The same growth that made Oyster necessary has now produced a side-effect Oyster was meant to avoid: a director based in Spain creates indicators of a taxable "permanent establishment" there, and the same question is now under review for Germany. Unwinding people from Oyster onto direct local employment is itself costly, which is part of why the change is being timed to the contract renewal rather than done immediately.<span class="ev ev-said">Said</span></p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary>Time recording and cost reporting</summary>
+      <div class="body">
+        <p>EU and government cost-reporting contracts require time recording for two separate reasons: to recognise revenue on progress-based (not deliverables-based) contracts, and to produce a legally defensible number for what one entity owes another for shared staff time. An estimated ≥£60k gap exists in Net Zero Cities time recording this year alone — though follow-up conversation suggests part of that is people not doing the funded work forecast for their role, a resourcing and forecasting issue as much as a compliance one, not purely under-logging.<span class="ev ev-said">Said</span></p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary>The one part of the org that has already stepped off this model</summary>
+      <div class="body">
+        <p>One team is already working on a deliverables basis, outside time recording entirely — but only because it separately built its own financial buffer to be able to afford working that way. It's a live proof that another model is possible, not yet a model the rest of the organisation can adopt without the same buffer.<span class="ev ev-said">Said</span></p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= PEOPLE ================= -->
+<section class="band band--sky" id="people">
+  <div class="wrap">
+    <div class="lbl">People, time and capacity</div>
+    <h2 class="sec">The behavioural cost is as real as the financial one</h2>
+    <p class="lede">And the organisation doesn't yet have the data it would need to see the shape of either clearly.</p>
+
+    <div class="g2">
+      <div>
+        <h4 style="font-size:17px;margin-bottom:10px">Time recording's cultural cost</h4>
+        <p style="font-size:16px">Named directly in the session, not inferred: time recording drives hoarding of work, protection of work, isolation, and lower collaboration across the organisation. It's treated as a necessity under current financial scarcity and cost-reporting contracts, not as something anyone believes works well long-term.<span class="ev ev-said">Said</span></p>
+      </div>
+      <div>
+        <h4 style="font-size:17px;margin-bottom:10px">Unfunded drift, with no trigger to stop it</h4>
+        <p style="font-size:16px">People hired against one funded contract can drift into unfunded work elsewhere with no automatic checkpoint — becoming an "invisible cost" carried for months before anyone notices. One anonymised example from the session: an employee funded against Net Zero Cities time has been generating only small, ad hoc income (roughly £5k at a time) from unrelated work, on a permanent contract that would be expensive to unwind.<span class="ev ev-said">Said</span></p>
+      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top:8px">
+      <h4>Central capacity is thin, and nobody knows if that's a problem</h4>
+      <p>Finance runs at 2.3 FTE against a group of roughly 50–55 FTE across five jurisdictions. Both people in this session agreed the multi-entity structure inflates the workload per FTE compared with a simpler organisation — but there's no external benchmark yet for whether 2.3 FTE is reasonable or chronically too low.<span class="ev ev-said">Said</span></p>
+    </div>
+
+    <p>Underneath both problems sits a data gap: income isn't classified by funding type (philanthropic, government/EU cost-reporting, earned) at group level — some grants are labelled simply "grant" with no distinction between a foundation gift and a government contract. This isn't neglect so much as a resourcing reality: the work that does get done, gets done reactively, "because there's urgency," rather than being maintained as ongoing infrastructure.<span class="ev ev-said">Said</span></p>
+  </div>
+</section>
+
+<!-- ================= OPEN QUESTIONS ================= -->
+<section class="band band--field" id="open">
+  <div class="wrap">
+    <div class="lbl">Open structural questions</div>
+    <h2 class="sec">Raised in this session, and explicitly left open</h2>
+    <p class="lede">None of these were decided. They're recorded here so the next round starts from where this one stopped, rather than relitigating the same ground.</p>
+
+    <ol class="tight">
+      <li><strong>Should entities be legally separated from the group,</strong> rather than run as one group with cross-entity staffing? Raised directly, and immediately countered by a practical question that wasn't resolved: without deliverables-based contracts, how would separated entities invoice each other for shared work at all?<span class="ev ev-said">Said</span></li>
+      <li><strong>Should deliverables-based contracting become the default,</strong> rather than the exception? It removes the need for time recording and its behavioural cost, but requires a financial buffer most teams don't have, and most current income (grant and government) isn't shaped that way to begin with.<span class="ev ev-inf">Inference</span></li>
+      <li><strong>Should there be an explicit portfolio-balance decision,</strong> instead of "if it's aligned to our objectives, we do it"? Both people in the session agreed there's currently no shared, revisited view of which mission areas the organisation is actively resourcing versus simply accepting work in — and separately agreed that a functional, operational entity ecosystem is itself a precondition for the mission, not a distraction from it.<span class="ev ev-said">Said</span></li>
+      <li><strong>Where is the organisation holding optionality open</strong> that it should instead decide on? Sweden was named as the live example: no current mission-pathways work there, and its viability entirely dependent on the de-minimis fix landing.<span class="ev ev-said">Said</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= EXPERIMENTS ================= -->
+<section class="band band--shade deep" id="experiments">
+  <div class="wrap">
+    <div class="lbl">Where we're already responding</div>
+    <h2 class="sec">The Governance Gap experiments, mapped against what's above</h2>
+    <p class="lede">A roadmap of nine framework areas and seventeen currently-running experiments already exists, aimed at improving exactly these present conditions. This section lines it up against the findings above.</p>
+
+    <div class="note" style="margin-bottom:22px">The framework below groups the org's evolution into five themes, each with its own numbered sub-areas (#1–#9 in this framework's own numbering). The seventeen experiment titles (#1–#17, separately numbered) are the organisation's present, live attempts against those themes. The grouping of experiments under each theme follows their position in the source roadmap; treat it as a reasonable working read rather than a confirmed 1:1 mapping, and check it against whoever is coordinating each experiment.<span class="ev ev-unv">Unverified</span></div>
+
+    <div class="fw">
+      <div class="fw-row">
+        <div class="fw-cat" style="background:var(--c1)">RE: our social contract &amp; standards-keeping</div>
+        <div class="fw-items">
+          <div><b>#1</b>Mission-driven stewardship as the form</div>
+          <div><b>#2</b>New structures for people &amp; standards holding</div>
+        </div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-cat" style="background:var(--c2)">Our missions and strategies</div>
+        <div class="fw-items">
+          <div><b>#3</b>Localised strategies with a Dm-level frame and constraints/investments</div>
+          <div><b>#4</b>A sensemaking and learning system driving mission coherence</div>
+        </div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-cat" style="background:var(--c3)">RE: our resourcing / business model</div>
+        <div class="fw-items">
+          <div><b>#5</b>Alternative revenue sources beyond philanthropic and public capital</div>
+          <div><b>#6</b>Build our own pooled funds</div>
+        </div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-cat" style="background:var(--c4)">RE: our foundational governance</div>
+        <div class="fw-items">
+          <div><b>#7</b>Dm Stewards driving org evolution &amp; Health Keepers holding whole-system risk/health</div>
+          <div><b>#8</b>Embedding practices that are needed for us and our work</div>
+        </div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-cat" style="background:var(--c5)">RE: our operations</div>
+        <div class="fw-items">
+          <div><b>#9</b>Operational flexibility reduction</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="expwrap">
+      <div class="expgroup" style="border-color:var(--c1)">
+        <h4>→ Social contract &amp; standards-keeping</h4>
+        <div class="expgrid">
+          <div class="expcard"><span class="en">EXP #2</span><h5>Reworking the Dm Constitution to serve as social contract</h5></div>
+          <div class="expcard"><span class="en">EXP #3</span><h5>Team re-onboarding to updated system</h5></div>
+          <div class="expcard"><span class="en">EXP #4</span><h5>Establishing a new people-holding structure</h5><p>Addresses the unfunded-drift problem above — people floating into unfunded work with no trigger point.</p></div>
+          <div class="expcard"><span class="en">EXP #5</span><h5>Talent strategy &amp; forecasting practices</h5><p>Addresses the finding that part of the Net Zero Cities time-recording gap is a forecasting gap, not just under-logging.</p></div>
+          <div class="expcard"><span class="en">EXP #6</span><h5>Offboarding standards &amp; practices</h5><p>Addresses the cost and difficulty of unwinding a permanent contract once someone has drifted into unfunded work.</p></div>
+          <div class="expcard"><span class="en">EXP #7</span><h5>Comms, design &amp; AI standards</h5></div>
+        </div>
+      </div>
+
+      <div class="expgroup" style="border-color:var(--c2)">
+        <h4>→ Missions and strategies</h4>
+        <div class="expgrid">
+          <div class="expcard"><span class="en">EXP #8</span><h5>Headline view + cyclical priorities &amp; constraints</h5><p>The live candidate for turning "anything aligned" into an explicit, revisited portfolio-balance decision.</p></div>
+          <div class="expcard"><span class="en">EXP #9</span><h5>AI knowledge management infrastructure</h5><p>This document, and the recording-to-LLM workflow behind it, are effectively a first working instance of this experiment.</p></div>
+        </div>
+      </div>
+
+      <div class="expgroup" style="border-color:var(--c3)">
+        <h4>→ Resourcing / business model</h4>
+        <div class="expgrid">
+          <div class="expcard"><span class="en">EXP #10</span><h5>Engagement with entrepreneurs and other capital sources</h5><p>Reduces reliance on the philanthropic/public capital that drives the VAT and cost-reporting problems above.</p></div>
+          <div class="expcard"><span class="en">EXP #11</span><h5>Fundraising for growth and match funding</h5><p>Directly relevant to Sweden's ~40% co-funding requirement above the de-minimis threshold.</p></div>
+          <div class="expcard"><span class="en">EXP #12</span><h5>Scoping a tooling fund</h5><p>A possible funder of last resort for the infrastructure fixes this document points to, which nobody currently has capacity to build.</p></div>
+        </div>
+      </div>
+
+      <div class="expgroup" style="border-color:var(--c4)">
+        <h4>→ Foundational governance</h4>
+        <div class="expgrid">
+          <div class="expcard"><span class="en">EXP #1</span><h5>Stewards as new formal roles in Dm</h5><p>The natural owner of decisions — like the entity-separation question — that this session raised and explicitly parked.</p></div>
+          <div class="expcard"><span class="en">EXP #13</span><h5>Sandbox conditions for work in 'Focus' phase</h5><p>The deliverables-based, non-time-recorded pilot already running is a live example of exactly this kind of sandbox.</p></div>
+          <div class="expcard"><span class="en">EXP #14</span><h5>Clean language and self-reflection practices</h5><p>Speaks to the "professional standards" framing used for the time-recording culture problem above.</p></div>
+        </div>
+      </div>
+
+      <div class="expgroup" style="border-color:var(--c5)">
+        <h4>→ Operations</h4>
+        <div class="expgrid">
+          <div class="expcard"><span class="en">EXP #15</span><h5>Clear standards for capacity stewardship &amp; unfunded investments</h5><p>Directly addresses the single most concretely costed people-risk in this document.</p></div>
+          <div class="expcard"><span class="en">EXP #16</span><h5>Protocols for entity changes and spin-outs</h5><p>Directly relevant to Canada's dissolution, and to any future call on entity separation or Sweden/South Korea viability.</p></div>
+          <div class="expcard"><span class="en">EXP #17</span><h5>Mandatory practices to improve operational information flows</h5><p>The natural home for the missing income-by-funding-type data, and for breaking the "we only do it because there's urgency" pattern named repeatedly in this session.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVOLVE ================= -->
+<section class="band band--sky" id="evolve">
+  <div class="wrap">
+    <div class="lbl">Where we can evolve the model</div>
+    <h2 class="sec">Candidate directions — not decisions</h2>
+    <p class="lede">Some of these already have a clear owner among the seventeen experiments above. Two of the biggest levers don't yet, and are flagged as such.</p>
+
+    <ol class="tight">
+      <li><strong>Decide the entity question on purpose, on a timebox.</strong> Not "should we separate entities" as an open-ended debate, but a scoped decision — which geographies justify a standing legal entity at all, given the compliance cost each one carries. <em>Nearest owner: EXP #16</em>, though the decision criteria themselves still need setting.</li>
+      <li><strong>Build financial abundance as a deliberate, group-level capability</strong> — not something one team has to invent for itself — so more of the organisation can step off time recording where the funding shape allows it. <em>No clear current owner among the seventeen</em> — the closest, EXP #10–12, are about acquiring capital rather than about how internal buffers get built and allocated. This is arguably the biggest single gap in the present roadmap.</li>
+      <li><strong>Make the funding-mix picture (income by type, by entity) standing infrastructure,</strong> not a one-off pulled together under urgency. <em>Nearest owner: EXP #17</em> — worth naming this specific dataset as an early deliverable rather than leaving it implicit in "operational information flows."</li>
+      <li><strong>Set a benchmark for "how thin is too thin"</strong> for central capacity (finance, and likely ops more broadly) relative to group size and entity complexity. <em>No current owner</em> — a natural addition under EXP #8 or EXP #17.</li>
+      <li><strong>Connect the trigger points that already exist in principle.</strong> EXP #4, #5 and #15 each independently point toward catching unfunded drift — the evolution is making sure they meet at one shared checkpoint (when someone's funded time runs out) instead of three separate practices that each cover part of the problem.</li>
+      <li><strong>Look for one generalisable pattern for "local presence" exposure,</strong> rather than solving Sweden's de-minimis threshold and Germany's permanent-establishment question separately, each time growth creates a new one. <em>Nearest owner: EXP #16.</em></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= NEXT ================= -->
+<section class="band band--field" id="next">
+  <div class="wrap">
+    <div class="lbl">What's needed next</div>
+    <h2 class="sec">The data and decisions the next round should bring</h2>
+    <p class="lede">Asked directly in the session: once this synthesis exists, what would it need to know to go further? This is that list.</p>
+
+    <div class="g2">
+      <div>
+        <h4 style="font-size:16px;margin-bottom:10px">Data to fill in</h4>
+        <ul class="tight" style="font-size:16px">
+          <li>Group-level income broken down by funding type (philanthropic / EU or government cost-reporting / earned or day-rate) — not currently classified.</li>
+          <li>An external comparator for finance-team FTE ratio at similarly-sized, similarly multi-entity organisations.</li>
+          <li>A full picture of unfunded/"floating" time across the group, beyond the one example surfaced in this session.</li>
+          <li>South Korea's financial position and sustainability case, flagged as lower-visibility than the rest of the group.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:16px;margin-bottom:10px">Decisions to bring</h4>
+        <ul class="tight" style="font-size:16px">
+          <li>Timeline and fallback plan for Sweden's association/de-minimis fix, if the external partner doesn't respond.</li>
+          <li>An actual portfolio-focus criterion, tested against current live work — not just agreement that one should exist.</li>
+          <li>Who owns "decide the entity question" and "build financial abundance broadly" — the two directions above without a clear current owner.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:8px">
+      <h4>Also worth doing</h4>
+      <p>How other consortium members make similarly-structured EU programmes work for their own organisations was raised as a genuinely open, unresolved inquiry in the session — worth finishing, since it bears directly on whether the BV's cost-reporting losses are a Dm-specific problem or a shared structural feature of that funding route.<span class="ev ev-said">Said</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Source:</strong> an internal working session on Dm's business and operating model, 16 September 2026, between the organisation's finance lead and two directors. Individual staff members used as illustrative examples in that conversation are anonymised here at the session's own explicit request. A separately supplied roadmap image of the current Governance Gap experiments (nine framework areas, seventeen running experiments) is reproduced and cross-referenced in the Governance Gap experiments section.</p>
+    <p>This page is an AI-assisted synthesis, not a reviewed or approved organisational position. Figures are as stated in the session and have not been independently re-verified against the accounts. Treat every <span class="ev ev-said">Said</span> claim as traceable to the recording, every <span class="ev ev-inf">Inference</span> as this document's own connective reasoning, and every <span class="ev ev-unv">Unverified</span> point as needing a check before it's relied on.</p>
+  </div>
+</footer>
+
+</body>
+</html>
