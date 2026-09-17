@@ -315,6 +315,13 @@
     footer{flex-direction:column;align-items:flex-start;}
     footer .sig{text-align:left;}
   }
+
+  @media print{
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .wrap{padding:32px 28px;}
+    .frame,.q,.room-card,.slot,tr,footer{break-inside:avoid;page-break-inside:avoid;}
+    section{break-inside:avoid-page;}
+  }
 </style>
 </head>
 <body>
