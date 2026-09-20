@@ -173,12 +173,13 @@
   }
 
   /* why dm */
-  .reasons{display:grid;grid-template-columns:1fr 1fr;gap:28px 36px;margin-top:8px;}
-  .reason{display:flex;gap:14px;}
-  .reason .rn{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--rust);flex:none;padding-top:3px;}
-  .reason h3{font-size:0.98rem;font-weight:500;margin-bottom:6px;}
-  .reason p{font-size:0.92rem;color:var(--ink-dim);}
-  @media (max-width:700px){ .reasons{grid-template-columns:1fr;} }
+  .proof-list{margin-top:24px;border-top:1px solid var(--line);}
+  .proof-item{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);}
+  .proof-item .pn{font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--rust);flex:none;width:20px;padding-top:2px;}
+  .proof-item h3{font-size:1.02rem;font-weight:500;margin-bottom:8px;}
+  .proof-item p{font-size:0.95rem;color:var(--ink-dim);max-width:600px;}
+  .proof-take{margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.02em;color:var(--pine);}
+  @media (max-width:600px){ .proof-item{gap:12px;} }
 
   /* close / colophon */
   .close{border-top:1px solid var(--line);padding-block:64px;}
@@ -552,12 +553,49 @@
         </svg>
       </div>
       <div class="essay-body" style="max-width:100%;">
-        <h2>Trust infrastructure, built over years of doing the work</h2>
-        <div class="reasons">
-          <div class="reason"><span class="rn mono">i.</span><div><h3>We spend money well</h3><p>DM's reputation with funders rests on a track record of moving resource into work with real, tangible benefit — not the size of the ask.</p></div></div>
-          <div class="reason"><span class="rn mono">ii.</span><div><h3>We hold the frontier</h3><p>DM operates in Horizon 3 territory — ideas early enough to need the right constraints, not just capital, to become concrete.</p></div></div>
-          <div class="reason"><span class="rn mono">iii.</span><div><h3>We know our lane</h3><p>We're not trying to be the institution that runs the finished thing at scale. Our edge is de-risking the opportunity space so the right partner can carry it from there.</p></div></div>
-          <div class="reason"><span class="rn mono">iv.</span><div><h3>We build for the long relationship</h3><p>Multi-year, multi-cycle relationships with foundations like JRF and Lankelly Chase show what happens when trust compounds instead of resetting every round.</p></div></div>
+        <h2>What the work itself shows</h2>
+        <p>Five pieces of work, five different things they say about how DM operates.</p>
+        <div class="proof-list">
+          <div class="proof-item">
+            <span class="pn mono">i.</span>
+            <div>
+              <h3>Beyond the Rules</h3>
+              <p>Continuously funded by Lankelly Chase since 2020, alongside the Democratic Society, Black Thrive and the York Multiple Complex Needs Network — an ongoing inquiry into the rules and governance structures that entrench severe disadvantage, and how to rewrite them.</p>
+              <div class="proof-take">→ trust that compounds, rather than resetting every funding cycle</div>
+            </div>
+          </div>
+          <div class="proof-item">
+            <span class="pn mono">ii.</span>
+            <div>
+              <h3>NetZeroCities</h3>
+              <p>DM leads policy and regulatory innovation design within NetZeroCities, the EU's support platform for its 100 Climate-Neutral and Smart Cities Mission — a Horizon Europe-funded consortium of 33 partners working across 112 cities.</p>
+              <div class="proof-take">→ systemic work, run at genuine institutional scale</div>
+            </div>
+          </div>
+          <div class="proof-item">
+            <span class="pn mono">iii.</span>
+            <div>
+              <h3>Healthy, Clean Cities</h3>
+              <p>As part of EIT Climate-KIC's Healthy, Clean Cities Deep Demonstration, DM helped design transition pathways across roughly ten European cities — testing how climate-neutral change actually spreads between places, not just within one.</p>
+              <div class="proof-take">→ frontier thinking, tested city by city</div>
+            </div>
+          </div>
+          <div class="proof-item">
+            <span class="pn mono">iv.</span>
+            <div>
+              <h3>TreesAI</h3>
+              <p>DM's open-source platform for financing nature-based infrastructure is piloting in Glasgow with the city council, Scottish Water, Flood Re, Nationwide and Clyde Climate Forest, backed by the Esmée Fairbairn Foundation and NatureScot — turning trees into financeable flood infrastructure.</p>
+              <div class="proof-take">→ ideas built into working, funded tools — not just reports</div>
+            </div>
+          </div>
+          <div class="proof-item">
+            <span class="pn mono">v.</span>
+            <div>
+              <h3>Civic Square</h3>
+              <p>With Civic Square in Birmingham, DM has co-authored 3ºC Neighbourhood and Endowing the Future, and partnered on the Retrofit Reimagined festival — working as a peer alongside a neighbourhood-scale civic infrastructure team, not above one.</p>
+              <div class="proof-take">→ systemic design, grounded one neighbourhood at a time</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
