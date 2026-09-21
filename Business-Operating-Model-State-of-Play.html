@@ -199,6 +199,10 @@ footer a{color:var(--ochre-bright)}
 footer .wrap{max-width:1080px}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:rgba(158,113,24,.14);padding:1px 5px;border-radius:3px}
 
+.srclist{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.srclist a{font-family:'Bricolage Grotesque',sans-serif;font-size:13.5px;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.srclist a:hover{color:var(--flare)}
+
 @media(max-width:860px){
   .band{padding:46px 20px}
   body{font-size:16.5px}
@@ -541,6 +545,29 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;bac
       <h4>Also worth doing</h4>
       <p>How other consortium members make similarly-structured EU programmes work for their own organisations was raised as a genuinely open, unresolved inquiry in the session — worth finishing, since it bears directly on whether the BV's cost-reporting losses are a Dm-specific problem or a shared structural feature of that funding route.<span class="ev ev-said">Said</span></p>
     </div>
+
+    <details class="acc" style="margin-top:8px">
+      <summary>How other organisations make cost-reporting projects work — first findings<span class="ev ev-unv">Unverified</span></summary>
+      <div class="body">
+        <div class="smeta">External research, 21 Sep 2026 — a first pass at the open inquiry above. Needs checking against Dm's actual Net Zero Cities contract before anyone acts on it.</div>
+        <p>Two concrete, low-effort levers are worth checking directly against the BV's Net Zero Cities cost claims. First, <strong>the 25% flat-rate indirect-cost allowance</strong>: every Horizon Europe beneficiary can claim 25% of eligible direct costs as indirect costs, with no supporting documentation required and regardless of actual overhead rate. Second, <strong>non-deductible VAT as an eligible cost</strong> — Article 6.3 of the Horizon Europe Model Grant Agreement lets beneficiaries who genuinely cannot reclaim VAT nationally claim it back from the grant itself, rather than absorb it as loss. If either of these isn't currently being claimed in full against the ~£100k/yr unrecoverable-VAT figure above, that's money on the table rather than an unsolvable structural drag.</p>
+        <p>Time recording also isn't universal across Horizon Europe — it depends on which cost model a given contract uses. Actual-cost grants require timesheets; lump-sum grants (paid per work package or deliverable) don't require timesheets to be submitted at all, only internal records showing the work genuinely happened; and a middle option, "personnel unit costs," lets a beneficiary use one calculated daily rate from its annual accounts instead of tracking each person's actual time individually.</p>
+        <p>One important wrinkle: Net Zero Cities is coordinated by EIT Climate-KIC as a 33-partner, 13-country consortium, and runs a two-tier structure — a core consortium funded directly via a Framework Partnership Agreement with the European Commission, and other participants brought in as sub-grantees under a separate Award Agreement with Climate-KIC. The general Horizon Europe rules above apply cleanly to the core consortium's EC grant agreement; a sub-grant agreement with Climate-KIC could carry different, stricter terms. Which of these Dm actually sits under is worth confirming directly rather than assumed — it decides which levers above are actually available.<span class="ev ev-unv">Unverified</span></p>
+
+        <div class="lbl" style="margin-top:22px;margin-bottom:2px">Sources</div>
+        <ul class="srclist">
+          <li><a href="https://www.pnoinnovation.com/insights/horizon-europe-faq/" target="_blank" rel="noopener">FAQ for budgets and costs in Horizon Europe projects — PNO Innovation</a></li>
+          <li><a href="https://eufunds.me/how-to-calculate-indirect-costs-in-horizon-europe/" target="_blank" rel="noopener">How to calculate indirect costs (overheads) in Horizon Europe? — EU Funds</a></li>
+          <li><a href="https://accelopment.com/blog/funding/claiming-vat-in-horizon-europe-projects-a-guide-for-eu-and-swiss-partners/" target="_blank" rel="noopener">Claiming VAT in Horizon Europe projects — accelopment</a></li>
+          <li><a href="https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/common/guidance/aga_en.pdf" target="_blank" rel="noopener">AGA — Annotated Grant Agreement (Horizon Europe)</a></li>
+          <li><a href="https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/guidance/ls-funding-what-do-i-need-to-know_he_en.pdf" target="_blank" rel="noopener">Lump sum funding: what do I need to know? — European Commission</a></li>
+          <li><a href="https://www.emdesk.com/horizon-2020-horizon-europe-basics-guide/personnel-cost-calculator" target="_blank" rel="noopener">Horizon Europe Personnel Cost Calculator — EMDESK</a></li>
+          <li><a href="https://netzerocities.eu/consortium/" target="_blank" rel="noopener">NetZeroCities Consortium: Partners Leading Urban Innovation</a></li>
+          <li><a href="https://www.eit.europa.eu/news-events/news/eit-climate-kics-netzerocities-fighting-climate-change-city-partnerships" target="_blank" rel="noopener">EIT Climate-KIC's NetZeroCities — EIT</a></li>
+          <li><a href="https://netzerocities.eu/wp-content/uploads/2022/09/NZC-PCP-FinancialGuidelines-v1.0-20220905.pdf" target="_blank" rel="noopener">NetZeroCities Financial Guidelines for Applicants</a></li>
+        </ul>
+      </div>
+    </details>
   </div>
 </section>
 
